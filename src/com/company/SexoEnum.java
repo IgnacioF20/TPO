@@ -1,5 +1,5 @@
 package com.company;
 
 public enum SexoEnum {
-    Femenino, Masculino, X
+    FEMENINO, MASCULINO, X
 }
