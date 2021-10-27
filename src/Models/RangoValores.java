@@ -19,4 +19,9 @@ public class RangoValores {
     public void setValorMaximo(int valorMaximo) {
         this.valorMaximo = valorMaximo;
     }
+
+    public RangoValores(int valorMinimo, int valorMaximo) {
+        this.valorMinimo = valorMinimo;
+        this.valorMaximo = valorMaximo;
+    }
 }

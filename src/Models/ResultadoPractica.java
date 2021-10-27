@@ -19,4 +19,9 @@ public class ResultadoPractica {
     public void setValor(int valor) {
         this.valor = valor;
     }
+
+    public ResultadoPractica(Practica practica, int valor) {
+        this.practica = practica;
+        this.valor = valor;
+    }
 }

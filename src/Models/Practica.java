@@ -46,4 +46,12 @@ public class Practica {
     public void setValoresReservados(RangoValores valoresReservados) {
         this.valoresReservados = valoresReservados;
     }
+
+    public Practica(int codigoPractica, String nombrePractica, int cantHorasResultado, RangoValores valoresCriticos, RangoValores valoresReservados) {
+        this.codigoPractica = codigoPractica;
+        this.nombrePractica = nombrePractica;
+        this.cantHorasResultado = cantHorasResultado;
+        this.valoresCriticos = valoresCriticos;
+        this.valoresReservados = valoresReservados;
+    }
 }

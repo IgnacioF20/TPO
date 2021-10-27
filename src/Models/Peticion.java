@@ -39,4 +39,11 @@ public class Peticion {
     public void setFinalizada(boolean finalizada) {
         this.finalizada = finalizada;
     }
+
+    public Peticion(String obraSocial, Date fechaCarga, Date fechaEntrega, boolean finalizada) {
+        this.obraSocial = obraSocial;
+        this.fechaCarga = fechaCarga;
+        this.fechaEntrega = fechaEntrega;
+        this.finalizada = finalizada;
+    }
 }

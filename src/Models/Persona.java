@@ -48,4 +48,12 @@ public class Persona {
     public void setFechaDeNacimiento(Date fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
+
+    public Persona(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
+        this.DNI = DNI;
+        this.email = email;
+        this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
 }

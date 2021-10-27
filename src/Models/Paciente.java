@@ -19,4 +19,9 @@ public class Paciente {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    public Paciente(Sexo sexo, int edad) {
+        this.sexo = sexo;
+        this.edad = edad;
+    }
 }

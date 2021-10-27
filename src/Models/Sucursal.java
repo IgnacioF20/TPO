@@ -28,4 +28,10 @@ public class Sucursal {
     public void setResponsableTecnico(Usuario responsableTecnico) {
         this.responsableTecnico = responsableTecnico;
     }
+
+    public Sucursal(int numero, String dirección, Usuario responsableTecnico) {
+        this.numero = numero;
+        this.dirección = dirección;
+        this.responsableTecnico = responsableTecnico;
+    }
 }
