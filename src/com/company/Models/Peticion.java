@@ -1,4 +1,4 @@
-package Models;
+package com.company.Models;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +10,7 @@ public class Peticion {
     private Date fechaEntrega;
     private boolean finalizada;
     private List<Practica> practicas = new ArrayList<>();
+    private List<ResultadoPractica> resultadosPracticas = new ArrayList<>();
 
     public String getObraSocial() {
         return obraSocial;

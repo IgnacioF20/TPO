@@ -1,4 +1,4 @@
-package Controllers;
+package com.company.Controllers;
 
 public class practicaController {
 }

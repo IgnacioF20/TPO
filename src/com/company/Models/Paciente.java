@@ -1,4 +1,4 @@
-package Models;
+package com.company.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,4 +28,10 @@ public class Paciente {
         this.sexo = sexo;
         this.edad = edad;
     }
+
+    public int calcularEdad(){
+        return this.edad;
+    }
+
+
 }

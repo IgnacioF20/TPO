@@ -1,4 +1,4 @@
-package Controllers;
+package com.company.Controllers;
 
 public class pacienteController {
     private ArrayList<Paciente> listaDePaciente = new ArrayList();

@@ -1,4 +1,4 @@
-package Models;
+package com.company.Models;
 
 public class RangoValores {
     private int valorMinimo;

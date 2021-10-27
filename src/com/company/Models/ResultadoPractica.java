@@ -1,4 +1,4 @@
-package Models;
+package com.company.Models;
 
 public class ResultadoPractica {
     private Practica practica;
