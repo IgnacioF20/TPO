@@ -1,8 +1,12 @@
 package Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Paciente {
     private Sexo sexo;
     private int edad;
+    private List<Peticion> peticiones = new ArrayList<>();
 
     public Sexo getSexo() {
         return sexo;

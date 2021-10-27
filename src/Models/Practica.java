@@ -1,11 +1,15 @@
 package Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Practica {
     private int codigoPractica;
     private String nombrePractica;
     private int cantHorasResultado;
     private RangoValores valoresCriticos;
     private RangoValores valoresReservados;
+    private List<Practica> practicas = new ArrayList<>();
 
     public int getCodigoPractica() {
         return codigoPractica;

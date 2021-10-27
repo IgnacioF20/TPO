@@ -1,12 +1,15 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Peticion {
     private String obraSocial;
     private Date fechaCarga;
     private Date fechaEntrega;
     private boolean finalizada;
+    private List<Practica> practicas = new ArrayList<>();
 
     public String getObraSocial() {
         return obraSocial;

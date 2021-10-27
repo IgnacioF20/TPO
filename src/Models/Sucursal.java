@@ -1,9 +1,13 @@
 package Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sucursal {
     private int numero;
     private String dirección;
     private Usuario responsableTecnico;
+    private List<Peticion> peticiones = new ArrayList<>();
 
     public int getNumero() {
         return numero;
