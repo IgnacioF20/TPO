@@ -1,5 +1,5 @@
-package com.company.DTO;
-import com.company.Models.RangoValores;
+package com.company.dto;
+import com.company.models.RangoValores;
 
 public class PracticaDTO {
     private int codigoPractica;

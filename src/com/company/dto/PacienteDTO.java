@@ -1,6 +1,6 @@
-package com.company.DTO;
+package com.company.dto;
 
-import com.company.Enum.SexoEnum;
+import com.company.enumerate.SexoEnum;
 
 import java.util.Date;
 

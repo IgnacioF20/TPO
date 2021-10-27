@@ -1,4 +1,4 @@
-package com.company.DTO;
+package com.company.dto;
 
 public class ResultadoDTO {
 }

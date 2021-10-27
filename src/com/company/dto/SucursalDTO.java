@@ -1,6 +1,6 @@
-package com.company.DTO;
+package com.company.dto;
 
-import com.company.Models.Usuario;
+import com.company.models.Usuario;
 
 public class SucursalDTO {
     private int numero;

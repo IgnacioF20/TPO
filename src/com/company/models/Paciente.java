@@ -1,6 +1,6 @@
-package com.company.Models;
+package com.company.models;
 
-import com.company.Enum.SexoEnum;
+import com.company.enumerate.SexoEnum;
 
 import java.util.ArrayList;
 import java.util.Date;

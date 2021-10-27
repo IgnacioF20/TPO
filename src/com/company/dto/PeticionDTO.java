@@ -1,9 +1,5 @@
-package com.company.DTO;
-import com.company.Models.Practica;
-import com.company.Models.ResultadoPractica;
-import java.util.ArrayList;
+package com.company.dto;
 import java.util.Date;
-import java.util.List;
 
 public class PeticionDTO {
     private String obraSocial;

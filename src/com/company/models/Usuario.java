@@ -1,6 +1,6 @@
-package com.company.Models;
+package com.company.models;
 
-import com.company.Enum.CargoEnum;
+import com.company.enumerate.CargoEnum;
 
 import java.util.Date;
 

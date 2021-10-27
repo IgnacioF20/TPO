@@ -1,12 +1,10 @@
-package com.company.Controllers;
+package com.company.controllers;
 
-import com.company.Models.Paciente;
+import com.company.models.Paciente;
 import java.util.ArrayList;
-import java.util.List;
 
-public class pacienteController {
+public class PacienteController {
     private ArrayList<Paciente> listaDePaciente = new ArrayList();
-
 
     /*
     public void NuevoPaciente(PacienteDTO p){
