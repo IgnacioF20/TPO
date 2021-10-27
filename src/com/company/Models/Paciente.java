@@ -1,14 +1,17 @@
 package com.company.Models;
 
+import com.company.Enum.SexoEnum;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class Paciente {
-    private Sexo sexo;
+public class Paciente extends Persona{
+    private SexoEnum sexo;
     private int edad;
     private List<Peticion> peticiones = new ArrayList<>();
 
-    public Sexo getSexo() {
+    public SexoEnum getSexo() {
         return sexo;
     }
 
@@ -16,7 +19,7 @@ public class Paciente {
         return edad;
     }
 
-    public void setSexo(Sexo sexo) {
+    public void setSexo(SexoEnum sexo) {
         this.sexo = sexo;
     }
 
@@ -24,7 +27,8 @@ public class Paciente {
         this.edad = edad;
     }
 
-    public Paciente(Sexo sexo, int edad) {
+    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo, int edad) {
+        super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.sexo = sexo;
         this.edad = edad;
     }

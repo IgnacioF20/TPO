@@ -55,5 +55,6 @@ public class Persona {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.fechaDeNacimiento = fechaDeNacimiento;
+
     }
 }
