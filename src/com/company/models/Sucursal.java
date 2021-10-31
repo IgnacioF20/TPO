@@ -38,4 +38,12 @@ public class Sucursal {
         this.dirección = dirección;
         this.responsableTecnico = responsableTecnico;
     }
+    public boolean esResponsable(int DNI){
+        return DNI == responsableTecnico.DNI;
+    }
+    public void listarPeticionesCriticas(){
+        for (int x=0;x<peticiones.size();x++)
+            System.out.println(peticiones[x]);
+
+    }
 }

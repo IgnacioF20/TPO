@@ -24,4 +24,6 @@ public class ResultadoPractica {
         this.practica = practica;
         this.valor = valor;
     }
+
+
 }

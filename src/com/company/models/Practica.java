@@ -42,7 +42,6 @@ public class Practica {
     public void setCantHorasResultado(int cantHorasResultado) {
         this.cantHorasResultado = cantHorasResultado;
     }
-
     public void setValoresCriticos(RangoValores valoresCriticos) {
         this.valoresCriticos = valoresCriticos;
     }
@@ -57,5 +56,9 @@ public class Practica {
         this.cantHorasResultado = cantHorasResultado;
         this.valoresCriticos = valoresCriticos;
         this.valoresReservados = valoresReservados;
+    }
+
+    public int calcularQhoras(){
+        return cantHorasResultado;
     }
 }

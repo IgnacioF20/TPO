@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Paciente extends Persona{
+public class Paciente extends Persona {
     private SexoEnum sexo;
     private int edad;
     private List<Peticion> peticiones = new ArrayList<>();
@@ -33,9 +33,14 @@ public class Paciente extends Persona{
         this.edad = edad;
     }
 
-    public int calcularEdad(){
+    public int calcularEdad() {
         return this.edad;
     }
+    public int GetDNI() {
+        return this.DNI;
+    }
+
+
 
 
 }
