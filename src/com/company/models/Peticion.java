@@ -11,7 +11,9 @@ public class Peticion {
     private boolean finalizada;
     private List<Practica> practicas = new ArrayList<>();
     private List<ResultadoPractica> resultadosPracticas = new ArrayList<>();
-    private int id;
+    private String id;
+    private static int NumeradorPeticion = 0;
+
 
     public String getObraSocial() {
         return obraSocial;
@@ -50,17 +52,16 @@ public class Peticion {
         this.fechaCarga = fechaCarga;
         this.fechaEntrega = fechaEntrega;
         this.finalizada = finalizada;
+        NumeradorPeticion ++;
+        this.id = String.valueOf(NumeradorPeticion);
     }
-
     public boolean estaActiva(){
         return this.finalizada;
     }
-
-    public int codigoPeticion(){
+    public String codigoPeticion(){
         return this.id;
     }
-
     public void mostrarPeticion(){
-        
+
     }
 }

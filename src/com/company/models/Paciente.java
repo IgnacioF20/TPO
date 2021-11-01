@@ -10,7 +10,6 @@ public class Paciente extends Persona {
     private SexoEnum sexo;
     private int edad;
     private List<Peticion> peticiones = new ArrayList<>();
-
     public SexoEnum getSexo() {
         return sexo;
     }
@@ -40,6 +39,25 @@ public class Paciente extends Persona {
         return this.DNI;
     }
 
+    public boolean PeticionFinalizada(){
+        boolean response = false;
+        for(Peticion peticion: this.peticiones){
+            if(!response){
+                response = peticion.estaActiva();
+            }
+        }
+        return response;
+    }
+
+    public int mostrarResultadoPractica(int nroPractica){
+        int response = 0;
+        for(Peticion peticion: this.peticiones){
+            if(nroPractica == Integer.parseInt(peticion.codigoPeticion())){
+                response = Integer.parseInt(peticion.codigoPeticion());
+            }
+        }
+        return response;
+    }
 
 
 
