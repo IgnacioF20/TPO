@@ -23,7 +23,7 @@ public class Paciente extends Persona {
         this.edad = edad;
     }
 
-    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo, int edad) {
+    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo) {
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.sexo = sexo;
         this.edad = edad;

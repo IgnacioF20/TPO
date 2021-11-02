@@ -6,21 +6,31 @@ import com.company.models.Paciente;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class PacienteController {
-    private ArrayList<Paciente> Pacientes = new ArrayList();
 
-    public boolean NuevoPaciente(PacienteDTO p){
+public class PacienteController {
+
+    ArrayList<Paciente> pacientes = new ArrayList();
+
+
+    public boolean NuevoPaciente(PacienteDTO paciente){
+
         boolean flag;
-        if(ObtenerPacientePorDNI(p.getDNI()) != null){
-            this.listaDePaciente.add(dtoToModel(p));
+
+        if(ObtenerPacientePorDNI(paciente.getDNI()) != null){
+            this.pacientes.add(dtoToModel(paciente));
             return true;
-        }else{
-            return false;
         }
+        else
+            return false;
     }
+
+
     private Paciente ObtenerPacientePorDNI(int dni){
+
         Paciente retorno = null;
+
         for(Paciente paciente : pacientes){
+
             if(paciente.GetDNI() == dni){
                 retorno = paciente;
                 break;
@@ -29,21 +39,11 @@ public class PacienteController {
         return retorno;
     }
 
-    private static Paciente dtoToModel(PacienteDTO p){
+
+    private static Paciente dtoToModel(PacienteDTO paciente){
+
         //mapear con el mismo orden
-
-        Paciente nuevoPaciente = new Paciente(p.getDNI(),p.getEmail());
-
+        Paciente nuevoPaciente = new Paciente(paciente.getDNI(), paciente.getEmail(), paciente.getNombre(), paciente.getDomicilio(), paciente.getFechaDeNacimiento(), paciente.getSexo());
         return nuevoPaciente;
-
-
     }
-
-
-
-    public boolean ObtenerPacientePorDNI(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo, int edad){
-
-    }
-
-
 }
