@@ -3,6 +3,8 @@ package com.company.controllers;
 import com.company.dto.PacienteDTO;
 import com.company.enumerate.SexoEnum;
 import com.company.models.Paciente;
+import com.company.models.Peticion;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +14,7 @@ public class PacienteController {
     ArrayList<Paciente> pacientes = new ArrayList();
 
 
-    public boolean NuevoPaciente(PacienteDTO paciente){
+    public boolean altaPaciente(PacienteDTO paciente){
 
         boolean flag;
 
@@ -22,6 +24,38 @@ public class PacienteController {
         }
         else
             return false;
+    }
+
+
+    public boolean modificarPaciente(){
+
+        return false;
+    }
+
+
+    public boolean bajaPaciente(int dni){
+
+        return false;
+    }
+
+
+    public boolean altaPeticion(int dni){
+
+
+        return false;
+    }
+
+
+    public boolean modificarPeticion(){
+
+        return false;
+    }
+
+
+    public Peticion consultarPeticion(){
+
+
+        return null;
     }
 
 
