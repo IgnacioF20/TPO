@@ -1,5 +1,5 @@
 package com.company.enumerate;
 
-public enum SexoEnum {
+public enum SexoEnumerate {
     FEMENINO, MASCULINO, X
 }

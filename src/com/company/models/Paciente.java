@@ -1,23 +1,21 @@
 package com.company.models;
 
-import com.company.dto.PacienteDTO;
-import com.company.enumerate.SexoEnum;
+import com.company.enumerate.SexoEnumerate;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.text.DateFormat;
 
 public class Paciente extends Persona {
 
     ArrayList<Peticion> peticiones = new ArrayList();
-    SexoEnum sexo;
+    SexoEnumerate sexo;
     int edad;
 
-    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo) {
+    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.sexo = sexo;
@@ -78,11 +76,11 @@ public class Paciente extends Persona {
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
     }
 
-    public SexoEnum getSexo() {
+    public SexoEnumerate getSexo() {
         return sexo;
     }
 
-    public void setSexo(SexoEnum sexo) {
+    public void setSexo(SexoEnumerate sexo) {
         this.sexo = sexo;
     }
 

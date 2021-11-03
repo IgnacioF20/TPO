@@ -1,16 +1,17 @@
 package com.company.dto;
 
-import com.company.enumerate.SexoEnum;
+import com.company.enumerate.SexoEnumerate;
 
 import java.util.Date;
 
 public class PacienteDTO {
+
     private int DNI;
     private String email;
     private String nombre;
     private String domicilio;
     private Date fechaDeNacimiento;
-    private SexoEnum sexo;
+    private SexoEnumerate sexo;
 
     public int getDNI() {
         return DNI;
@@ -52,15 +53,15 @@ public class PacienteDTO {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public SexoEnum getSexo() {
+    public SexoEnumerate getSexo() {
         return sexo;
     }
 
-    public void setSexo(SexoEnum sexo) {
+    public void setSexo(SexoEnumerate sexo) {
         this.sexo = sexo;
     }
 
-    public PacienteDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnum sexo) {
+    public PacienteDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
         this.DNI = DNI;
         this.email = email;
         this.nombre = nombre;

@@ -77,24 +77,24 @@ public class PacienteController {
 
     private Paciente ObtenerPacientePorDNI(int dni){
 
-        Paciente retorno = null;
+        Paciente pacienteBuscado = null;
 
         for(Paciente paciente : pacientes){
 
             if(paciente.getDNI() == dni){
 
-                retorno = paciente;
+                pacienteBuscado = paciente;
                 break;
             }
         }
-        return retorno;
+        return pacienteBuscado;
     }
 
 
     private static Paciente dtoToModel(PacienteDTO paciente){
 
         //mapear con el mismo orden
-        Paciente nuevoPaciente = new Paciente(paciente.getDNI(), paciente.getEmail(), paciente.getNombre(), paciente.getDomicilio(), paciente.getFechaDeNacimiento(), paciente.getSexo());
-        return nuevoPaciente;
+        Paciente pacienteNuevo = new Paciente(paciente.getDNI(), paciente.getEmail(), paciente.getNombre(), paciente.getDomicilio(), paciente.getFechaDeNacimiento(), paciente.getSexo());
+        return pacienteNuevo;
     }
 }

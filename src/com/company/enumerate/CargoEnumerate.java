@@ -1,5 +1,5 @@
 package com.company.enumerate;
 
-public enum CargoEnum {
+public enum CargoEnumerate {
         RECEPCIONISTA, LABORATISTA, ADMINISTRADOR
 }
