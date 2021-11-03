@@ -3,6 +3,7 @@ package com.company.models;
 import java.util.Date;
 
 public class Persona {
+
     protected int DNI;
     protected String email;
     protected String nombre;

@@ -1,12 +1,9 @@
 package com.company.controllers;
 
 import com.company.dto.PacienteDTO;
-import com.company.enumerate.SexoEnum;
 import com.company.models.Paciente;
 import com.company.models.Peticion;
-
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class PacienteController {
@@ -18,16 +15,35 @@ public class PacienteController {
 
         boolean flag;
 
-        if(ObtenerPacientePorDNI(paciente.getDNI()) != null){
+        // SI OBTENEMOS NULL, NO SE ENCUENTRA EL PACIENTE CARGADO Y PROCEDEMOS A CARGARLO.
+        if(ObtenerPacientePorDNI(paciente.getDNI()) == null){
+
             this.pacientes.add(dtoToModel(paciente));
             return true;
         }
+        // EL PACIENTE YA ESTA CARGADO.
         else
             return false;
     }
 
 
-    public boolean modificarPaciente(){
+    public boolean modificarPaciente(PacienteDTO paciente){
+
+        // SI OBTENEMOS NULL, NO SE ENCUENTRA EL PACIENTE CARGADO Y PROCEDEMOS A MODIFICARLO.
+        Paciente pacienteAModificar = ObtenerPacientePorDNI(paciente.getDNI());
+
+        if(pacienteAModificar != null){
+
+//            pacienteAModificar.modificarAtributos(paciente);
+
+//            TO DELETE!!
+            System.out.println("");
+
+
+        }
+        // EL PACIENTE YA ESTA CARGADO.
+        else
+            return false;
 
         return false;
     }
@@ -65,7 +81,8 @@ public class PacienteController {
 
         for(Paciente paciente : pacientes){
 
-            if(paciente.GetDNI() == dni){
+            if(paciente.getDNI() == dni){
+
                 retorno = paciente;
                 break;
             }
