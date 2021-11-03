@@ -13,10 +13,8 @@ public class PacienteController {
 
     public boolean altaPaciente(PacienteDTO paciente){
 
-        boolean flag;
-
         // SI OBTENEMOS NULL, NO SE ENCUENTRA EL PACIENTE CARGADO Y PROCEDEMOS A CARGARLO.
-        if(ObtenerPacientePorDNI(paciente.getDNI()) == null){
+        if(obtenerPacientePorDNI(paciente.getDNI()) == null){
 
             this.pacientes.add(dtoToModel(paciente));
             return true;
@@ -30,7 +28,7 @@ public class PacienteController {
     public boolean modificarPaciente(PacienteDTO paciente){
 
         // SI OBTENEMOS NULL, NO SE ENCUENTRA EL PACIENTE CARGADO Y PROCEDEMOS A MODIFICARLO.
-        Paciente pacienteAModificar = ObtenerPacientePorDNI(paciente.getDNI());
+        Paciente pacienteAModificar = obtenerPacientePorDNI(paciente.getDNI());
 
         if(pacienteAModificar != null){
 
@@ -38,14 +36,13 @@ public class PacienteController {
 
 //            TO DELETE!!
             System.out.println("");
+            return true;
 
 
         }
         // EL PACIENTE YA ESTA CARGADO.
         else
             return false;
-
-        return false;
     }
 
 
@@ -75,7 +72,7 @@ public class PacienteController {
     }
 
 
-    private Paciente ObtenerPacientePorDNI(int dni){
+    private Paciente obtenerPacientePorDNI(int dni){
 
         Paciente pacienteBuscado = null;
 

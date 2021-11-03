@@ -7,14 +7,13 @@ import java.util.Date;
 public class Usuario extends Persona{
 
     private String password;
-    private CargoEnumerate rol;
+    private CargoEnumerate cargo;
 
     public Usuario(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
-
         this.password = password;
-        this.rol = rol;
+        this.cargo = cargo;
     }
 
 
@@ -68,8 +67,6 @@ public class Usuario extends Persona{
         super.setFechaDeNacimiento(fechaDeNacimiento);
     }
 
-
-
     public String getPassword() {
         return password;
     }
@@ -78,11 +75,11 @@ public class Usuario extends Persona{
         this.password = password;
     }
 
-    public CargoEnumerate getRol() {
-        return rol;
+    public CargoEnumerate getCargo() {
+        return cargo;
     }
 
     public void setRol(CargoEnumerate rol) {
-        this.rol = rol;
+        this.cargo = rol;
     }
 }

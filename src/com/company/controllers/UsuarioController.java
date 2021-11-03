@@ -2,9 +2,7 @@ package com.company.controllers;
 
 import java.util.ArrayList;
 
-import com.company.dto.PacienteDTO;
 import com.company.dto.UsuarioDTO;
-import com.company.models.Paciente;
 import com.company.models.Usuario;
 
 public class UsuarioController {
@@ -13,16 +11,24 @@ public class UsuarioController {
 
     public boolean altaUsuario(UsuarioDTO usuario){
 
-        return true;
+        // SI OBTENEMOS NULL, NO SE ENCUENTRA EL USUARIO CARGADO Y PROCEDEMOS A CARGARLO.
+        if(obtenerUsuarioPorDNI(usuario.getDNI()) == null){
+
+            this.usuarios.add(dtoToModel(usuario));
+            return true;
+        }
+        // EL USUARIO YA ESTA CARGADO.
+        else
+            return false;
     }
 
-    private Usuario obtenerUsuarioPorDNI(int dni){
+    private Usuario obtenerUsuarioPorDNI(int DNI){
 
         Usuario usuarioBuscado = null;
 
         for(Usuario usuario : usuarios){
 
-            if(usuario.getDNI() == dni){
+            if(usuario.getDNI() == DNI){
 
                 usuarioBuscado = usuario;
                 break;
@@ -32,9 +38,19 @@ public class UsuarioController {
     }
 
 
+    public boolean validarCredenciales(int DNI, String password){
+
+        Usuario usuarioBuscado = obtenerUsuarioPorDNI(DNI);
+
+        if (usuarioBuscado != null &&  usuarioBuscado.getPassword() == password)
+            return true;
+        else
+            return false;
+    }
+
+
     private static Usuario dtoToModel(UsuarioDTO usuario){
 
-        //mapear con el mismo orden
         Usuario usuarioNuevo = new Usuario(usuario.getDNI(), usuario.getEmail(), usuario.getNombre(), usuario.getDomicilio(), usuario.getFechaDeNacimiento(),usuario.getPassword(), usuario.getCargo());
         return usuarioNuevo;
     }
