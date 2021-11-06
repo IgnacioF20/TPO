@@ -26,9 +26,7 @@ public class PacienteController {
     public boolean modificarPaciente(PacienteDTO paciente){
         Paciente pacienteAModificar = obtenerPacientePorDNI(paciente.getDNI());
         if(pacienteAModificar != null){
-            pacienteAModificar.setDNI(paciente.getDNI());
             pacienteAModificar.setDomicilio(paciente.getDomicilio());
-            pacienteAModificar.setEdad(paciente.getEdad());
             pacienteAModificar.setEmail(paciente.getEmail());
             pacienteAModificar.setNombre(paciente.getNombre());
             pacienteAModificar.setFechaDeNacimiento(paciente.getFechaDeNacimiento());
@@ -38,34 +36,48 @@ public class PacienteController {
         else
             return false;
     }
-    public boolean bajaPaciente(PacienteDTO paciente){
-        if(obtenerPacientePorDNI(paciente.getDNI()) != null){
-            this.pacientes.remove(pacientedtoToModel(paciente));
+    public boolean bajaPaciente(int dni){
+        Paciente paciente = obtenerPacientePorDNI(dni);
+        if(!paciente.tienePeticionCompleta()){
+            this.pacientes.remove(paciente);
             return true;
         }
         else
             return false;
     }
-    //REVISAR
-    //No entiendo por que no aparece peticiones
     public boolean altaPeticion(PacienteDTO paciente, PeticionDTO peticion){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
         if(pacienteAUtilizar != null){
-            pacienteAUtilizar.peticiones.add(peticiondtoToModel(peticion));
+            pacienteAUtilizar.altaPeticion(peticiondtoToModel(peticion));
             return true;
         }
         else
             return false;
     }
 
-    public boolean modificarPeticion(){
+    //IMPORTANTE
+    //como obtener el ID
+    //como consultar con un DTO el ID
+    public boolean modificarPeticion(int dni, int id){
+        Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
+        if(pacienteAUtilizar != null){
+            Peticion peticion;
 
+            pacienteAUtilizar.modificarPeticion();
+
+                    altaPeticion(peticiondtoToModel(peticion));
+            return true;
+        }
         return false;
     }
 
 
-    public Peticion consultarPeticion(){
-
+    public Peticion consultarPeticion(PacienteDTO paciente, PeticionDTO peticion){
+        Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
+        if(pacienteAUtilizar != null){
+            pacienteAUtilizar.altaPeticion(peticiondtoToModel(peticion));
+            return true;
+        }
 
         return null;
     }

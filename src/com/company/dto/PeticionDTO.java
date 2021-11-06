@@ -1,4 +1,6 @@
 package com.company.dto;
+import com.company.models.Sucursal;
+
 import java.util.Date;
 
 public class PeticionDTO {
@@ -6,6 +8,15 @@ public class PeticionDTO {
     private Date fechaCarga;
     private Date fechaEntrega;
     private boolean finalizada;
+    private Sucursal sucursal;
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
 
     public String getObraSocial() {
         return obraSocial;
@@ -31,10 +42,12 @@ public class PeticionDTO {
     public void setFinalizada(boolean finalizada) {
         this.finalizada = finalizada;
     }
-    public PeticionDTO(String obraSocial, Date fechaCarga, Date fechaEntrega, boolean finalizada) {
+
+    public PeticionDTO(String obraSocial, Date fechaCarga, Date fechaEntrega, boolean finalizada, Sucursal sucursal) {
         this.obraSocial = obraSocial;
         this.fechaCarga = fechaCarga;
         this.fechaEntrega = fechaEntrega;
         this.finalizada = finalizada;
+        this.sucursal = sucursal;
     }
 }

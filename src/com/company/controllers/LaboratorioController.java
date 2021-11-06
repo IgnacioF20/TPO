@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class LaboratorioController {
     ArrayList<Sucursal> sucursales = new ArrayList();
 
-    public boolean altaPSucursale(SucursalDTO sucursal){
+
+    public boolean altaSucursale(SucursalDTO sucursal){
         // SI OBTENEMOS NULL, PROCEDEMOS A CARGARLO.
         if(obtenerSucursal(sucursal.getNumero()) == null){
             this.sucursales.add(dtoToModel(sucursal));
@@ -22,7 +23,7 @@ public class LaboratorioController {
         else
             return false;
     }
-    private static Sucursal obtenerSucursal(int nroSucursal){
+    private Sucursal obtenerSucursal(int nroSucursal){
         Sucursal sucursalBuscada = null;
         for(Sucursal sucur : sucursales ){
             if(sucur.getNumero() == nroSucursal){
@@ -32,11 +33,11 @@ public class LaboratorioController {
         }
         return sucursalBuscada;
     }
-    private static Sucursal dtoToModel(SucursalDTO sucursal){
+    private Sucursal dtoToModel(SucursalDTO sucursal){
         Sucursal sucursalNueva = new Sucursal(sucursal.getNumero(), sucursal.getDirección(), sucursal.getResponsableTecnico());
         return sucursalNueva;
     }
-    private static boolean modificarSucursal(SucursalDTO sucursal){
+    public boolean modificarSucursal(SucursalDTO sucursal){
         Sucursal sucursalAEditar = obtenerSucursal(sucursal.getNumero());
         if(sucursalAEditar != null){
             sucursalAEditar.setDirección(sucursal.getDirección());
@@ -47,10 +48,26 @@ public class LaboratorioController {
         else
             return false;
     }
-    private boolean bajaSucursal(SucursalDTO sucursalAEliminar, SucursalDTO sucursalAPasarPeticiones){
+
+    //IMPORTANTE
+    //como hacer para obtener las peticiones de las sucursales
+    // tenemos 2 array list? o vamos directamente buscando por el Paciente?
+    // como se manejan las listas de agregacion?
+    private boolean tienePeticionesActivas(int nroSucursal){
+        Sucursal sucursal = obtenerSucursal(nroSucursal);
+        if(sucursal == null){
+            //OBTENER las peticiones de las sucursales
+        }
+    }
+    // IMPORTANTE
+    // Como hacer para dar de baja la sucursal
+    // como hacer para obtener la sucursal nueva donde se deben pasar las peticiones activas
+    public boolean bajaSucursal(SucursalDTO sucursalAEliminar, SucursalDTO sucursalAPasarPeticiones){
         if(obtenerSucursal(sucursalAEliminar.getNumero()) != null && obtenerSucursal(sucursalAPasarPeticiones.getNumero()) != null){
-            if(derivarPeticionesActivas(sucursalAEliminar, sucursalAPasarPeticiones)){
-                return eliminarSucursal(sucursalAEliminar);
+            if(tienePeticionesActivas(sucursalAEliminar.getNumero())){
+                if(derivarPeticionesActivas(sucursalAEliminar, sucursalAPasarPeticiones)){
+                    return eliminarSucursal(sucursalAEliminar);
+                }
             }
         }
         return false;
@@ -65,6 +82,15 @@ public class LaboratorioController {
     //falta este
     //Sucursales no pueden ser eliminadas si tienen una petición con resultados finalizados
     private boolean derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
+        for(Sucursal sucur : sucursales ){
+            if(sucur.getNumero() == sucursalDesde.getNumero()){
+                //recorrer peticiones activas
+                //y modificar sucursal a la peticion
+
+                peticion.set
+                break;
+            }
+        }
         return false;
     }
 

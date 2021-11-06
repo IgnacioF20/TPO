@@ -69,7 +69,9 @@ public class Paciente extends Persona {
 
     @Override
     public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+
         super.setFechaDeNacimiento(fechaDeNacimiento);
+        setEdad(fechaDeNacimiento);
     }
 
     public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
@@ -87,10 +89,8 @@ public class Paciente extends Persona {
     public int getEdad() {
         return edad;
     }
-
-
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setEdad(Date fechaNacimientoIngresada) {
+        this.edad = calcularEdad(fechaNacimientoIngresada);
     }
 
     public int calcularEdad(Date fechaNacimientoIngresada) {
@@ -111,12 +111,12 @@ public class Paciente extends Persona {
     }
 
 
-    public boolean PeticionFinalizada(){
+    public boolean tienePeticionCompleta(){
         boolean response = false;
         for(Peticion peticion: this.peticiones){
-            if(!response){
-                response = peticion.estaActiva();
-            }
+                if(peticion.estaActiva()){
+                    return true;
+                }
         }
         return response;
     }
@@ -130,6 +130,15 @@ public class Paciente extends Persona {
         }
         return response;
     }
+
+    public void altaPeticion(Peticion peticion){
+        peticiones.add(peticion);
+    }
+
+    public void modificarPeticion(Peticion peticion){
+
+    }
+
 
 //    public boolean modificarAtributos(PacienteDTO paciente){
 //

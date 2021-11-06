@@ -12,8 +12,16 @@ public class Peticion {
     private List<Practica> practicas = new ArrayList<>();
     private List<ResultadoPractica> resultadosPracticas = new ArrayList<>();
     private String id;
+    private Sucursal sucursal;
     private static int NumeradorPeticion = 0;
 
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
 
     public String getObraSocial() {
         return obraSocial;
@@ -47,13 +55,22 @@ public class Peticion {
         this.finalizada = finalizada;
     }
 
-    public Peticion(String obraSocial, Date fechaCarga, Date fechaEntrega, boolean finalizada) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Peticion(String obraSocial, Date fechaCarga, Date fechaEntrega, boolean finalizada, Sucursal sucursal) {
         this.obraSocial = obraSocial;
         this.fechaCarga = fechaCarga;
         this.fechaEntrega = fechaEntrega;
         this.finalizada = finalizada;
         NumeradorPeticion ++;
         this.id = String.valueOf(NumeradorPeticion);
+        this.sucursal = sucursal;
     }
     public boolean estaActiva(){
         return this.finalizada;
