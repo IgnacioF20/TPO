@@ -61,16 +61,12 @@ public class PacienteController {
     public boolean modificarPeticion(int dni, int id){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
         if(pacienteAUtilizar != null){
-            Peticion peticion;
-
+            // a revisar
             pacienteAUtilizar.modificarPeticion();
-
-                    altaPeticion(peticiondtoToModel(peticion));
             return true;
         }
         return false;
     }
-
 
     public Peticion consultarPeticion(PacienteDTO paciente, PeticionDTO peticion){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
