@@ -1,7 +1,9 @@
 package com.company.dto;
 
 import com.company.enumerate.SexoEnumerate;
+import com.company.models.Peticion;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class PacienteDTO {
@@ -12,6 +14,7 @@ public class PacienteDTO {
     private String domicilio;
     private Date fechaDeNacimiento;
     private SexoEnumerate sexo;
+    private int edad;
 
     public int getDNI() {
         return DNI;
@@ -59,6 +62,14 @@ public class PacienteDTO {
 
     public void setSexo(SexoEnumerate sexo) {
         this.sexo = sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public PacienteDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {

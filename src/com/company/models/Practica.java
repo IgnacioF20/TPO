@@ -7,6 +7,7 @@ public class Practica {
     private int codigoPractica;
     private String nombrePractica;
     private int cantHorasResultado;
+    private boolean usoHabilitado;
     private RangoValores valoresCriticos;
     private RangoValores valoresReservados;
     private List<Practica> practicas = new ArrayList<>();
@@ -50,10 +51,19 @@ public class Practica {
         this.valoresReservados = valoresReservados;
     }
 
-    public Practica(int codigoPractica, String nombrePractica, int cantHorasResultado, RangoValores valoresCriticos, RangoValores valoresReservados) {
+    public boolean isUsoHabilitado() {
+        return usoHabilitado;
+    }
+
+    public void setUsoHabilitado(boolean usoHabilitado) {
+        this.usoHabilitado = usoHabilitado;
+    }
+
+    public Practica(int codigoPractica, String nombrePractica, int cantHorasResultado, boolean usoHabilitado, RangoValores valoresCriticos, RangoValores valoresReservados) {
         this.codigoPractica = codigoPractica;
         this.nombrePractica = nombrePractica;
         this.cantHorasResultado = cantHorasResultado;
+        this.usoHabilitado = usoHabilitado;
         this.valoresCriticos = valoresCriticos;
         this.valoresReservados = valoresReservados;
     }

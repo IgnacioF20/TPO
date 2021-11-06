@@ -14,6 +14,15 @@ public class UsuarioDTO {
     private String password;
     private CargoEnumerate cargo;
 
+    public UsuarioDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
+        this.DNI = DNI;
+        this.email = email;
+        this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.password = password;
+        this.cargo = cargo;
+    }
 
     public int getDNI() {
         return DNI;

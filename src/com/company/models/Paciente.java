@@ -88,6 +88,7 @@ public class Paciente extends Persona {
         return edad;
     }
 
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
