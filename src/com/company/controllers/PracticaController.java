@@ -80,8 +80,8 @@ public class PracticaController {
     }
     //IMPORTANTE
     //REVISAR RANGO VALORES, ALGO ESTA MAL
-    private static Practica practicadtoToModel(PracticaDTO practica, RangoValores valoresCriticos, RangoValores valoresReservados){
-        Practica practicaNueva = new Paciente(practica.getCodigoPractica(),practica.getNombrePractica(), practica.isUsoHabilitado(), practica.getCantHorasResultado(), valoresCriticos,valoresReservados);
+    private static Practica practicadtoToModel(PracticaDTO practica){
+        Practica practicaNueva = new Paciente(practica.getCodigoPractica(),practica.getNombrePractica(), practica.isUsoHabilitado(), practica.getCantHorasResultado(), practica.getValoresCriticos(),practica.getValoresReservados());
         return practicaNueva;
     }
 
