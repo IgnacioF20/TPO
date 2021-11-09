@@ -69,23 +69,19 @@ public class LaboratorioController {
         }
         return false;
     }
-
-    // IMPORTANTE
+    // IMPORTANTE - CHECKEAR
     // Como hacer para dar de baja la sucursal
     // como hacer para obtener la sucursal nueva donde se deben pasar las peticiones activas
     // El resto publico para llamar desde la vista
     public boolean bajaSucursal(SucursalDTO sucursalAEliminar, SucursalDTO sucursalAPasarPeticiones){
         if(obtenerSucursal(sucursalAEliminar.getNumero()) != null && obtenerSucursal(sucursalAPasarPeticiones.getNumero()) != null){
             if(tienePeticionesActivas(sucursalAEliminar.getNumero())){
-                if(derivarPeticionesActivas(sucursalAEliminar, sucursalAPasarPeticiones)){
-                    return eliminarSucursal(sucursalAEliminar);
-                }
+                derivarPeticionesActivas(sucursalAEliminar, sucursalAPasarPeticiones);
             }
+            return eliminarSucursal(sucursalAEliminar);
         }
         return false;
     }
-
-
     private boolean eliminarSucursal(SucursalDTO sucursal){
         if(this.sucursales.remove(sucursal)){
             return true;
@@ -93,20 +89,11 @@ public class LaboratorioController {
             return false;
         }
     }
-
-
-    //falta este
-    //Sucursales no pueden ser eliminadas si tienen una petición con resultados finalizados
-    private boolean derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
-        for(Sucursal sucur : sucursales ){
-            if(sucur.getNumero() == sucursalDesde.getNumero()){
-                //recorrer peticiones activas
-                //y modificar sucursal a la peticion
-
-                peticion.set
-                break;
+    private void derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
+        for(Peticion peticion : peticiones ){
+            if(peticion.getSucursal().getNumero() == sucursalDesde.getNumero()){
+                peticion.setSucursal(dtoToModel(sucursalHasta));
             }
         }
-        return false;
     }
 }
