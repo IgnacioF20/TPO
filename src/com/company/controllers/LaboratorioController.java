@@ -76,15 +76,19 @@ public class LaboratorioController {
     //como hacer para obtener las peticiones de las sucursales
     // tenemos 2 array list? o vamos directamente buscando por el Paciente?
     // como se manejan las listas de agregacion?
-    private boolean tienePeticionesActivas(int nroSucursal){
+    public boolean tienePeticionesActivas(int nroSucursal){
         Sucursal sucursal = obtenerSucursal(nroSucursal);
         if(sucursal == null){
             //OBTENER las peticiones de las sucursales
+            ;
         }
+        return true;
     }
+
     // IMPORTANTE
     // Como hacer para dar de baja la sucursal
     // como hacer para obtener la sucursal nueva donde se deben pasar las peticiones activas
+    // El resto publico para llamar desde la vista
     public boolean bajaSucursal(SucursalDTO sucursalAEliminar, SucursalDTO sucursalAPasarPeticiones){
         if(obtenerSucursal(sucursalAEliminar.getNumero()) != null && obtenerSucursal(sucursalAPasarPeticiones.getNumero()) != null){
             if(tienePeticionesActivas(sucursalAEliminar.getNumero())){
