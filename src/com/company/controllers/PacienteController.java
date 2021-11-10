@@ -12,7 +12,6 @@ import java.util.Date;
 
 
 public class PacienteController {
-    private int numero;
     static PacienteController instance = null;
     ArrayList<Paciente> pacientes;
 
@@ -26,14 +25,6 @@ public class PacienteController {
             instance = new PacienteController();
         }
         return instance;
-    }
-
-    private void incrementar(int valor){
-        this.numero += valor;
-    }
-
-    public int getNumero(){
-        return this.numero;
     }
 
     public boolean altaPaciente(PacienteDTO paciente){

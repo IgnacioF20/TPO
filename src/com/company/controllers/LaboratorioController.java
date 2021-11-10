@@ -7,7 +7,6 @@ import com.company.models.Sucursal;
 import java.util.ArrayList;
 
 public class LaboratorioController {
-    private int numero;
     static LaboratorioController instance = null;
     ArrayList<Sucursal> sucursales;
     ArrayList<Peticion> peticiones;
@@ -24,16 +23,6 @@ public class LaboratorioController {
         }
         return instance;
     }
-
-    private void incrementar(int valor){
-        this.numero += valor;
-    }
-
-    public int getNumero(){
-        return this.numero;
-    }
-
-
 
     public boolean altaSucursal(SucursalDTO sucursal){
         if(obtenerSucursal(sucursal.getNumero()) != null){

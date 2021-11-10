@@ -7,8 +7,6 @@ import com.company.models.*;
 import java.util.ArrayList;
 
 public class PracticaController {
-
-    private int numero;
     static PracticaController instance = null;
     ArrayList<Practica> practicas;
 
@@ -22,14 +20,6 @@ public class PracticaController {
             instance = new PracticaController();
         }
         return instance;
-    }
-
-    private void incrementar(int valor){
-        this.numero += valor;
-    }
-
-    public int getNumero(){
-        return this.numero;
     }
 
     public boolean altaPractica(PracticaDTO practica){

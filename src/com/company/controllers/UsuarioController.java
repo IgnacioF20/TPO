@@ -7,7 +7,6 @@ import com.company.models.Practica;
 import com.company.models.Usuario;
 
 public class UsuarioController {
-    private int numero;
     static UsuarioController instance = null;
     ArrayList<Usuario> usuarios;
 
@@ -22,15 +21,6 @@ public class UsuarioController {
         }
         return instance;
     }
-
-    private void incrementar(int valor){
-        this.numero += valor;
-    }
-
-    public int getNumero(){
-        return this.numero;
-    }
-
 
     public boolean altaUsuario(UsuarioDTO usuario){
         if(obtenerUsuarioPorDNI(usuario.getDNI()) == null){
