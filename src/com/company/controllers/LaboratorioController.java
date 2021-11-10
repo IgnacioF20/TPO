@@ -111,12 +111,5 @@ public class LaboratorioController {
         }
     }
 
-    public  boolean enlazarPeticionSucursal(Peticion peticion, Sucursal sucursal){
-
-        Sucursal sucursalAUtilizar = obtenerSucursal
-
-        if()
-
-    }
 
 }
