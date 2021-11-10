@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class LaboratorioController {
 
-//    hola
 
     static LaboratorioController instance = null;
     ArrayList<Sucursal> sucursales;
@@ -17,7 +16,7 @@ public class LaboratorioController {
     }
 
     // SINGLETON
-    public static LaboratorioController getInstance(){
+    public static synchronized LaboratorioController getInstance(){
         if(instance == null){
             instance = new LaboratorioController();
         }

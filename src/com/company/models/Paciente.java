@@ -119,7 +119,6 @@ public class Paciente extends Persona {
     }
 
     public void altaPeticion(Peticion peticion){
-
         peticiones.add(peticion);
         peticion.getSucursal().enlazarPeticion(peticion);
     }
@@ -142,6 +141,17 @@ public class Paciente extends Persona {
             }
         }
         return response;
+    }
+
+    public Peticion getPeticion(String id){
+        Peticion peticionABuscar = null;
+        for(Peticion peticion: this.peticiones){
+            if(peticion.getId() == id){
+                peticionABuscar = peticion;
+                break;
+            }
+        }
+        return peticionABuscar;
     }
 
 

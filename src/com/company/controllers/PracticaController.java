@@ -39,8 +39,7 @@ public class PracticaController {
         }
         return PracticaBuscada;
     }
-    //IMPORTANTE
-    //revisar si este comportamiento es correcto
+
     public boolean modificarPractica(PracticaDTO practica){
         Practica practicaAModificar = obtenerPracticaPorCodigo(practica.getCodigoPractica());
         if(practicaAModificar != null){
@@ -50,7 +49,6 @@ public class PracticaController {
             practicaAModificar.setValoresCriticos(practica.getValoresCriticos());
             practicaAModificar.setValoresReservados(practica.getValoresReservados());
             practicaAModificar.setUsoHabilitado(practica.isUsoHabilitado());
-
             return true;
         }
         else

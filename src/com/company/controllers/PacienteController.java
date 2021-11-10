@@ -2,10 +2,12 @@ package com.company.controllers;
 
 import com.company.dto.PacienteDTO;
 import com.company.dto.PeticionDTO;
+import com.company.enumerate.SexoEnumerate;
 import com.company.models.Paciente;
 import com.company.models.Peticion;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class PacienteController {
@@ -63,26 +65,30 @@ public class PacienteController {
             return false;
     }
 
-    public boolean modificarPeticion(int dni, int id){
+    public boolean modificarPeticion(int dni, String idPeticion, PeticionDTO dto){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
+        Peticion peticion = null;
         if(pacienteAUtilizar != null){
-            // a revisar
-            pacienteAUtilizar.modificarPeticion();
-            return true;
+            peticion = pacienteAUtilizar.getPeticion(idPeticion);
+            if(peticion != null){
+                peticion.setSucursal(dto.getSucursal());
+                peticion.setFechaCarga(dto.getFechaCarga());
+                peticion.setFinalizada(dto.isFinalizada());
+                peticion.setObraSocial(dto.getObraSocial());
+            }
         }
-        return false;
+        return (peticion != null);
     }
 
-    public Peticion consultarPeticion(PacienteDTO paciente, PeticionDTO peticion){
-        Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
+    public Peticion consultarPeticion(int dni, PeticionDTO peticion){
+        Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
+        Peticion peticionACargar = null;
         if(pacienteAUtilizar != null){
-            pacienteAUtilizar.altaPeticion(peticiondtoToModel(peticion));
-            return true;
+            peticionACargar = peticiondtoToModel(peticion);
+            pacienteAUtilizar.altaPeticion(peticionACargar);
         }
-
-        return null;
+        return peticionACargar;
     }
-
 
     private Paciente obtenerPacientePorDNI(int dni){
         Paciente pacienteBuscado = null;
@@ -99,8 +105,7 @@ public class PacienteController {
         return pacienteNuevo;
     }
     private static Peticion peticiondtoToModel(PeticionDTO peticion){
-        Peticion peticionNueva = new Peticion(peticion.getObraSocial(), peticion.getFechaCarga(), peticion.getFechaEntrega(), peticion.isFinalizada());
-
+        Peticion peticionNueva = new Peticion(peticion.getObraSocial(), peticion.getFechaCarga(), peticion.getFechaEntrega(), peticion.isFinalizada(), peticion.getSucursal());
         return peticionNueva;
     }
 }

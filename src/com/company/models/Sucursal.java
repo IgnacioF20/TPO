@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Sucursal {
 
-//    hola
-
     List<Peticion> peticiones;
     int numero;
     String dirección;
