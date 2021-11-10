@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class LaboratorioController {
 
+//    hola
+
     static LaboratorioController instance = null;
     ArrayList<Sucursal> sucursales;
 
