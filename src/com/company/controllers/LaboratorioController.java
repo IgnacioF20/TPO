@@ -16,7 +16,7 @@ public class LaboratorioController {
         peticiones = new ArrayList();
     }
 
-    public static LaboratorioController getInstance(){
+    public static synchronized LaboratorioController getInstance(){
         if(instance == null){
             instance = new LaboratorioController();
         }
@@ -75,7 +75,6 @@ public class LaboratorioController {
             for(Peticion peticion : peticiones ){
                 if(peticion.estaActiva()){
                     return true;
-                    break;
                 }
             }
         }
@@ -101,7 +100,6 @@ public class LaboratorioController {
             return false;
         }
     }
-
 
     private void derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
         for(Peticion peticion : peticiones ){

@@ -14,7 +14,7 @@ public class PracticaController {
         practicas = new ArrayList();
     }
 
-    public static PracticaController getInstance(){
+    public static synchronized PracticaController getInstance(){
         if(instance == null){
             instance = new PracticaController();
         }
@@ -90,7 +90,7 @@ public class PracticaController {
     //IMPORTANTE
     //REVISAR RANGO VALORES, ALGO ESTA MAL
     private static Practica practicadtoToModel(PracticaDTO practica){
-        Practica practicaNueva = new Paciente(practica.getCodigoPractica(),practica.getNombrePractica(), practica.isUsoHabilitado(), practica.getCantHorasResultado(), practica.getValoresCriticos(),practica.getValoresReservados());
+        Practica practicaNueva = new Practica(practica.getCodigoPractica(),practica.getNombrePractica(), practica.getCantHorasResultado(),practica.isUsoHabilitado(), practica.getValoresCriticos(),practica.getValoresReservados());
         return practicaNueva;
     }
 

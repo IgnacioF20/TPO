@@ -1,5 +1,6 @@
 package com.company.models;
 
+import com.company.dto.PacienteDTO;
 import com.company.enumerate.SexoEnumerate;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -21,6 +22,14 @@ public class Paciente extends Persona {
         this.sexo = sexo;
         this.edad = edad;
     }
+    /*
+    public Paciente(PacienteDTO dto){
+        super(dto.DNI, dto.email, dto.nombre, dto.domicilio, dto.fechaDeNacimiento);
+        this.sexo = dto.sexo;
+        this.edad = dto.edad;
+
+    }
+    */
 
     @Override
     public int getDNI() {

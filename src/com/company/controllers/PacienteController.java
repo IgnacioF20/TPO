@@ -19,7 +19,7 @@ public class PacienteController {
         pacientes = new ArrayList();
     }
 
-    public static PacienteController getInstance(){
+    public static synchronized PacienteController getInstance(){
         if(instance == null){
             instance = new PacienteController();
         }
@@ -66,9 +66,6 @@ public class PacienteController {
             return false;
     }
 
-    //IMPORTANTE
-    //como obtener el ID
-    //como consultar con un DTO el ID
     public boolean modificarPeticion(int dni, int id){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
         if(pacienteAUtilizar != null){
@@ -106,6 +103,7 @@ public class PacienteController {
     }
     private static Peticion peticiondtoToModel(PeticionDTO peticion){
         Peticion peticionNueva = new Peticion(peticion.getObraSocial(), peticion.getFechaCarga(), peticion.getFechaEntrega(), peticion.isFinalizada());
-            return peticionNueva;
+
+        return peticionNueva;
     }
 }

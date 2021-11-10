@@ -14,7 +14,7 @@ public class UsuarioController {
         usuarios = new ArrayList();
     }
 
-    public static UsuarioController getInstance(){
+    public static synchronized UsuarioController getInstance(){
         if(instance == null){
             instance = new UsuarioController();
         }
