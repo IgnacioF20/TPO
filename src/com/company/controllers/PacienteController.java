@@ -2,16 +2,39 @@ package com.company.controllers;
 
 import com.company.dto.PacienteDTO;
 import com.company.dto.PeticionDTO;
+import com.company.dto.SucursalDTO;
 import com.company.models.Paciente;
 import com.company.models.Peticion;
+import com.company.models.Sucursal;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class PacienteController {
+    private int numero;
+    static PacienteController instance = null;
+    ArrayList<Paciente> pacientes;
 
+    private PacienteController(){
+        this.numero = 0;
+        pacientes = new ArrayList();
+    }
 
+    public static PacienteController getInstance(){
+        if(instance == null){
+            instance = new PacienteController();
+        }
+        return instance;
+    }
 
-    ArrayList<Paciente> pacientes = new ArrayList();
+    private void incrementar(int valor){
+        this.numero += valor;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
 
     public boolean altaPaciente(PacienteDTO paciente){
         if(obtenerPacientePorDNI(paciente.getDNI()) == null){
@@ -21,8 +44,6 @@ public class PacienteController {
         else
             return false;
     }
-
-
     public boolean modificarPaciente(PacienteDTO paciente){
         Paciente pacienteAModificar = obtenerPacientePorDNI(paciente.getDNI());
         if(pacienteAModificar != null){
@@ -36,8 +57,6 @@ public class PacienteController {
         else
             return false;
     }
-
-
     public boolean bajaPaciente(int dni){
         Paciente paciente = obtenerPacientePorDNI(dni);
         if(!paciente.tienePeticionCompleta()){
@@ -47,23 +66,15 @@ public class PacienteController {
         else
             return false;
     }
-
-
-    public boolean altaPeticion(int dni, PeticionDTO peticionDTO){
-
-        Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
-
+    public boolean altaPeticion(PacienteDTO paciente, PeticionDTO peticion){
+        Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
         if(pacienteAUtilizar != null){
-
-            Peticion peticion = peticiondtoToModel(peticionDTO);
-            pacienteAUtilizar.altaPeticion(peticion);
-            LaboratorioController laboratorio = LaboratorioController.getInstance();
-            laboratorio.enlazarPeticionSucursal(peticion, peticion.getSucursal());
+            pacienteAUtilizar.altaPeticion(peticiondtoToModel(peticion));
+            return true;
         }
         else
             return false;
     }
-
 
     //IMPORTANTE
     //como obtener el ID
@@ -77,7 +88,6 @@ public class PacienteController {
         }
         return false;
     }
-
 
     public Peticion consultarPeticion(PacienteDTO paciente, PeticionDTO peticion){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(paciente.getDNI());
@@ -100,14 +110,10 @@ public class PacienteController {
         }
         return pacienteBuscado;
     }
-
-
     private static Paciente pacientedtoToModel(PacienteDTO paciente){
         Paciente pacienteNuevo = new Paciente(paciente.getDNI(), paciente.getEmail(), paciente.getNombre(), paciente.getDomicilio(), paciente.getFechaDeNacimiento(), paciente.getSexo());
         return pacienteNuevo;
     }
-
-
     private static Peticion peticiondtoToModel(PeticionDTO peticion){
         Peticion peticionNueva = new Peticion(peticion.getObraSocial(), peticion.getFechaCarga(), peticion.getFechaEntrega(), peticion.isFinalizada());
             return peticionNueva;

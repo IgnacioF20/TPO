@@ -2,15 +2,35 @@ package com.company.controllers;
 
 import com.company.dto.PacienteDTO;
 import com.company.dto.PracticaDTO;
-import com.company.models.Paciente;
-import com.company.models.Practica;
-import com.company.models.RangoValores;
-import com.company.models.Sucursal;
+import com.company.models.*;
 
 import java.util.ArrayList;
 
 public class PracticaController {
-    ArrayList<Practica> practicas = new ArrayList();
+
+    private int numero;
+    static PracticaController instance = null;
+    ArrayList<Practica> practicas;
+
+    private PracticaController(){
+        this.numero = 0;
+        practicas = new ArrayList();
+    }
+
+    public static PracticaController getInstance(){
+        if(instance == null){
+            instance = new PracticaController();
+        }
+        return instance;
+    }
+
+    private void incrementar(int valor){
+        this.numero += valor;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
 
     public boolean altaPractica(PracticaDTO practica){
         if(obtenerPracticaPorCodigo(practica.getCodigoPractica()) == null){

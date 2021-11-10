@@ -1,14 +1,38 @@
 package com.company.controllers;
 
 import com.company.dto.SucursalDTO;
+import com.company.models.Paciente;
 import com.company.models.Peticion;
 import com.company.models.Sucursal;
 import java.util.ArrayList;
 
 public class LaboratorioController {
+    private int numero;
+    static LaboratorioController instance = null;
+    ArrayList<Sucursal> sucursales;
+    ArrayList<Peticion> peticiones;
 
-    ArrayList<Sucursal> sucursales = new ArrayList();
-    ArrayList<Peticion> peticiones = new ArrayList();
+    private LaboratorioController(){
+        this.numero = 0;
+        sucursales = new ArrayList();
+        peticiones = new ArrayList();
+    }
+
+    public static LaboratorioController getInstance(){
+        if(instance == null){
+            instance = new LaboratorioController();
+        }
+        return instance;
+    }
+
+    private void incrementar(int valor){
+        this.numero += valor;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
+
 
 
     public boolean altaSucursal(SucursalDTO sucursal){

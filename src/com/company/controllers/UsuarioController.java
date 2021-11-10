@@ -3,11 +3,34 @@ package com.company.controllers;
 import java.util.ArrayList;
 
 import com.company.dto.UsuarioDTO;
+import com.company.models.Practica;
 import com.company.models.Usuario;
 
 public class UsuarioController {
+    private int numero;
+    static UsuarioController instance = null;
+    ArrayList<Usuario> usuarios;
 
-    ArrayList<Usuario> usuarios = new ArrayList<>();
+    private UsuarioController(){
+        this.numero = 0;
+        usuarios = new ArrayList();
+    }
+
+    public static UsuarioController getInstance(){
+        if(instance == null){
+            instance = new UsuarioController();
+        }
+        return instance;
+    }
+
+    private void incrementar(int valor){
+        this.numero += valor;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
+
 
     public boolean altaUsuario(UsuarioDTO usuario){
         if(obtenerUsuarioPorDNI(usuario.getDNI()) == null){
