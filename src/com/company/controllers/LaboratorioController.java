@@ -89,12 +89,22 @@ public class LaboratorioController {
             return false;
         }
     }
+
+
     private void derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
         for(Peticion peticion : peticiones ){
             if(peticion.getSucursal().getNumero() == sucursalDesde.getNumero()){
                 peticion.setSucursal(dtoToModel(sucursalHasta));
             }
         }
+    }
+
+    public  boolean enlazarPeticionSucursal(Peticion peticion, Sucursal sucursal){
+
+        Sucursal sucursalAUtilizar = obtenerSucursal
+
+        if()
+
     }
 
 }

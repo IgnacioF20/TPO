@@ -110,6 +110,10 @@ public class Paciente extends Persona {
         return this.edad;
     }
 
+    public void altaPeticion(Peticion peticion){
+
+        peticiones.add(peticion);
+    }
 
     public boolean tienePeticionCompleta(){
         boolean response = false;
@@ -131,9 +135,7 @@ public class Paciente extends Persona {
         return response;
     }
 
-    public void altaPeticion(Peticion peticion){
-        peticiones.add(peticion);
-    }
+
 
     public void modificarPeticion(Peticion peticion){
 

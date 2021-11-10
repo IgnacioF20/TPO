@@ -11,6 +11,7 @@ public class toDelete {
     public void toDelete(){
         System.out.println("HIT2");
 
+        int test = 0;
         System.out.println("HIT");
 
     }
