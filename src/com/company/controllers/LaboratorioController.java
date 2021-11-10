@@ -1,7 +1,6 @@
 package com.company.controllers;
 
 import com.company.dto.SucursalDTO;
-import com.company.models.Peticion;
 import com.company.models.Sucursal;
 import java.util.ArrayList;
 
@@ -9,12 +8,10 @@ public class LaboratorioController {
 
     static LaboratorioController instance = null;
     ArrayList<Sucursal> sucursales;
-    ArrayList<Peticion> peticiones;
 
     //  CONSTRUCTOR
     private LaboratorioController(){
         sucursales = new ArrayList();
-        peticiones = new ArrayList();
     }
 
     // SINGLETON
@@ -51,59 +48,49 @@ public class LaboratorioController {
         return (sucursalAModificar != null);
     }
 
-    // IMPORTANTE - CHECKEAR
-    // Como hacer para dar de baja la sucursal
-    // como hacer para obtener la sucursal nueva donde se deben pasar las peticiones activas
-    // El resto publico para llamar desde la vista
+
     public boolean bajaSucursal(SucursalDTO dto){
 
         Sucursal sucursalAEliminar = getSucursal(dto.getNumero());
 
         if(sucursalAEliminar != null){
 
-            if(tienePeticionesActivas(sucursalAEliminar.getNumero())){
+            if(!sucursalAEliminar.tienePeticionesActivas())
 
-                this.sucursales.remove(sucursal)
+                this.sucursales.remove(sucursalAEliminar);
+            else
 
-                derivarPeticionesActivas(sucursalAEliminar, sucursalAPasarPeticiones);
-            }
-            return eliminarSucursal(sucursalAEliminar);
+                sucursalAEliminar = null;
+        }
+        return (sucursalAEliminar != null);
+    }
+
+
+    public boolean tienePeticionesActivas(int numeroSucursal){
+
+        Sucursal sucursal = getSucursal(numeroSucursal);
+
+        if(sucursal != null){
+
+            return(sucursal.tienePeticionesActivas());
         }
         return false;
     }
 
 
-    public boolean eliminarSucursal(SucursalDTO sucursal){
+    public boolean derivarPeticionesActivas(int numeroSucursalOrigen, int numeroSucursalDestino){
 
-        if(this.sucursales.remove(sucursal)){
-            return true;
-        }else{
-            return false;
+        Sucursal sucursalOrigen = getSucursal(numeroSucursalOrigen);
+        Sucursal sucursalDestino = null;
+
+        if(sucursalOrigen != null){
+
+            sucursalDestino = getSucursal(numeroSucursalDestino);
+
+            if(sucursalDestino != null)
+                sucursalOrigen.derivarPeticionesActivas(sucursalDestino);
         }
-    }
-
-
-    public boolean tienePeticionesActivas(int nroSucursal){
-
-        Sucursal sucursal = getSucursal(nroSucursal);
-        if(sucursal == null){
-            for(Peticion peticion : peticiones ){
-                if(peticion.estaActiva()){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-
-    public void derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
-
-        for(Peticion peticion : peticiones ){
-            if(peticion.getSucursal().getNumero() == sucursalDesde.getNumero()){
-                peticion.setSucursal(dtoToModel(sucursalHasta));
-            }
-        }
+        return (sucursalDestino!= null);
     }
 
     //  GETTER AND SETTER

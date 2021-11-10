@@ -30,23 +30,11 @@ public class SucursalDTO {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     public String getDirección() {
         return dirección;
     }
 
-    public void setDirección(String dirección) {
-        this.dirección = dirección;
-    }
-
     public Usuario getResponsableTecnico() {
         return responsableTecnico;
-    }
-
-    public void setResponsableTecnico(Usuario responsableTecnico) {
-        this.responsableTecnico = responsableTecnico;
     }
 }
