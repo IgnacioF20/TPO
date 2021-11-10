@@ -72,6 +72,7 @@ public class Peticion {
         this.id = String.valueOf(NumeradorPeticion);
         this.sucursal = sucursal;
     }
+
     public boolean estaActiva(){
         return this.finalizada;
     }

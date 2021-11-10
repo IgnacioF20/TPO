@@ -16,12 +16,14 @@ public class LaboratorioController {
         peticiones = new ArrayList();
     }
 
-    public static synchronized LaboratorioController getInstance(){
+
+    public static LaboratorioController getInstance(){
         if(instance == null){
             instance = new LaboratorioController();
         }
         return instance;
     }
+
 
     public boolean altaSucursal(SucursalDTO sucursal){
         if(obtenerSucursal(sucursal.getNumero()) != null){
@@ -31,6 +33,7 @@ public class LaboratorioController {
         else
             return false;
     }
+
 
     private Sucursal obtenerSucursal(int nroSucursal){
         Sucursal sucursalBuscada = null;
@@ -54,10 +57,14 @@ public class LaboratorioController {
         }
         return cargada;
     }
+
+
     private Sucursal dtoToModel(SucursalDTO sucursal){
         Sucursal sucursalNueva = new Sucursal(sucursal.getNumero(), sucursal.getDirección(), sucursal.getResponsableTecnico());
         return sucursalNueva;
     }
+
+
     public boolean modificarSucursal(SucursalDTO sucursal){
         Sucursal sucursalAEditar = obtenerSucursal(sucursal.getNumero());
         if(sucursalAEditar != null){
@@ -69,6 +76,8 @@ public class LaboratorioController {
         else
             return false;
     }
+
+
     public boolean tienePeticionesActivas(int nroSucursal){
         Sucursal sucursal = obtenerSucursal(nroSucursal);
         if(sucursal == null){
@@ -80,6 +89,8 @@ public class LaboratorioController {
         }
         return false;
     }
+
+
     // IMPORTANTE - CHECKEAR
     // Como hacer para dar de baja la sucursal
     // como hacer para obtener la sucursal nueva donde se deben pasar las peticiones activas
@@ -93,6 +104,8 @@ public class LaboratorioController {
         }
         return false;
     }
+
+
     private boolean eliminarSucursal(SucursalDTO sucursal){
         if(this.sucursales.remove(sucursal)){
             return true;
@@ -100,6 +113,7 @@ public class LaboratorioController {
             return false;
         }
     }
+
 
     private void derivarPeticionesActivas(SucursalDTO sucursalDesde, SucursalDTO sucursalHasta){
         for(Peticion peticion : peticiones ){

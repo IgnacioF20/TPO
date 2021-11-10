@@ -46,4 +46,10 @@ public class Sucursal {
 //            System.out.println(peticiones[x]);
 //
 //    }
+
+    public void enlazarPeticion(Peticion peticion){
+        peticiones.add(peticion);
+    }
+
+
 }
