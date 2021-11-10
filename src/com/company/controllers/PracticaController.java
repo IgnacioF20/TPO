@@ -11,7 +11,6 @@ public class PracticaController {
     ArrayList<Practica> practicas;
 
     private PracticaController(){
-        this.numero = 0;
         practicas = new ArrayList();
     }
 

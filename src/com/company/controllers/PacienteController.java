@@ -16,7 +16,6 @@ public class PacienteController {
     ArrayList<Paciente> pacientes;
 
     private PacienteController(){
-        this.numero = 0;
         pacientes = new ArrayList();
     }
 

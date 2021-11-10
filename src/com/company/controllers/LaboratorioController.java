@@ -12,7 +12,6 @@ public class LaboratorioController {
     ArrayList<Peticion> peticiones;
 
     private LaboratorioController(){
-        this.numero = 0;
         sucursales = new ArrayList();
         peticiones = new ArrayList();
     }

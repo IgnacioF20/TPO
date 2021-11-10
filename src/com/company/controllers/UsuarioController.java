@@ -11,7 +11,6 @@ public class UsuarioController {
     ArrayList<Usuario> usuarios;
 
     private UsuarioController(){
-        this.numero = 0;
         usuarios = new ArrayList();
     }
 
