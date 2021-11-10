@@ -121,6 +121,10 @@ public class Paciente extends Persona {
     public void altaPeticion(Peticion peticion){
         peticiones.add(peticion);
         peticion.getSucursal().enlazarPeticion(peticion);
+        for(Practica practica: peticion.getPracticas()){
+            practica.setPeticion(peticion);
+        }
+
     }
 
     public boolean tienePeticionCompleta(){

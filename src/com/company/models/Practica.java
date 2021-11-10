@@ -10,7 +10,8 @@ public class Practica {
     private boolean usoHabilitado;
     private RangoValores valoresCriticos;
     private RangoValores valoresReservados;
-    private List<Practica> practicas = new ArrayList<>();
+    private ArrayList<Practica> practicas = new ArrayList<>();
+    private ArrayList<Peticion> peticiones = new ArrayList<>();
 
     public int getCodigoPractica() {
         return codigoPractica;
@@ -67,6 +68,15 @@ public class Practica {
         this.valoresCriticos = valoresCriticos;
         this.valoresReservados = valoresReservados;
     }
+
+    public void setPeticion(Peticion peticion){
+        this.peticiones.add(peticion);
+    }
+
+    public boolean esUsada(){
+        return (this.peticiones != null);
+    }
+
 
     public int calcularQhoras(){
         return cantHorasResultado;

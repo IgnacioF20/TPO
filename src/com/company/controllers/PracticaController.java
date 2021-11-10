@@ -54,39 +54,31 @@ public class PracticaController {
         else
             return false;
     }
-    public boolean bajaPractica(PracticaDTO practica){
-        if(obtenerPracticaPorCodigo(practica.getCodigoPractica()) != null){
-
-            // IMPORTANTE
-            // aca falta hacer el recorrido en todas las peticiones
-            // si existe la practica en alguna peticion
-            // no se puede eliminar esta practica
-
-            this.practicas.remove(practicadtoToModel(practica));
-            return true;
+    public boolean bajaPractica(int codigoPractica){
+        boolean response = false;
+        Practica practica = obtenerPracticaPorCodigo(codigoPractica);
+        if(practica != null && !practica.esUsada() ){
+            this.practicas.remove(practica);
+            response = true;
         }
-        else
-            return false;
+        return response;
     }
-    public boolean inhabilitarUso(PracticaDTO practica){
-        Practica practicaAModificar = obtenerPracticaPorCodigo(practica.getCodigoPractica());
+    public boolean inhabilitarUso(int codigoPractica){
+        Practica practicaAModificar = obtenerPracticaPorCodigo(codigoPractica);
         if(practicaAModificar != null){
             practicaAModificar.setUsoHabilitado(false);
-            return true;
         }
-        else
-            return false;
+        return (practicaAModificar != null);
     }
-    private boolean enUso(PracticaDTO practica){
-        Practica practicaABuscar = obtenerPracticaPorCodigo(practica.getCodigoPractica());
+    private boolean enUso(int codigoPractica){
+        Practica practicaABuscar = obtenerPracticaPorCodigo(codigoPractica);
+        boolean response = false;
         if(practicaABuscar != null){
-            return practicaABuscar.isUsoHabilitado();
+            response = practicaABuscar.isUsoHabilitado();
         }
-        else
-            return false;
+        return response;
     }
-    //IMPORTANTE
-    //REVISAR RANGO VALORES, ALGO ESTA MAL
+
     private static Practica practicadtoToModel(PracticaDTO practica){
         Practica practicaNueva = new Practica(practica.getCodigoPractica(),practica.getNombrePractica(), practica.getCantHorasResultado(),practica.isUsoHabilitado(), practica.getValoresCriticos(),practica.getValoresReservados());
         return practicaNueva;

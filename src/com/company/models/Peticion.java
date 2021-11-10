@@ -9,8 +9,8 @@ public class Peticion {
     private Date fechaCarga;
     private Date fechaEntrega;
     private boolean finalizada;
-    private List<Practica> practicas = new ArrayList<>();
-    private List<ResultadoPractica> resultadosPracticas = new ArrayList<>();
+    private ArrayList<Practica> practicas = new ArrayList<>();
+    private ArrayList<ResultadoPractica> resultadosPracticas = new ArrayList<>();
     private String id;
     private Sucursal sucursal;
     private static int NumeradorPeticion = 0;
@@ -82,5 +82,8 @@ public class Peticion {
     public void mostrarPeticion(){
 
 
+    }
+    public ArrayList<Practica> getPracticas(){
+        return this.practicas;
     }
 }
