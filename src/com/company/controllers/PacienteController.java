@@ -2,13 +2,10 @@ package com.company.controllers;
 
 import com.company.dto.PacienteDTO;
 import com.company.dto.PeticionDTO;
-import com.company.dto.SucursalDTO;
 import com.company.models.Paciente;
 import com.company.models.Peticion;
-import com.company.models.Sucursal;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class PacienteController {
@@ -90,7 +87,7 @@ public class PacienteController {
     private Paciente obtenerPacientePorDNI(int dni){
         Paciente pacienteBuscado = null;
         for(Paciente paciente : pacientes){
-            if(paciente.getDNI() == dni){
+            if(paciente.getDni() == dni){
                 pacienteBuscado = paciente;
                 break;
             }

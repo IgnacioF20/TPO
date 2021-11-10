@@ -3,7 +3,6 @@ package com.company.controllers;
 import java.util.ArrayList;
 
 import com.company.dto.UsuarioDTO;
-import com.company.models.Practica;
 import com.company.models.Usuario;
 
 public class UsuarioController {
@@ -32,7 +31,7 @@ public class UsuarioController {
     private Usuario obtenerUsuarioPorDNI(int DNI){
         Usuario usuarioBuscado = null;
         for(Usuario usuario : usuarios){
-            if(usuario.getDNI() == DNI){
+            if(usuario.getDni() == DNI){
                 usuarioBuscado = usuario;
                 break;
             }

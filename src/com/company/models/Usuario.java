@@ -18,8 +18,8 @@ public class Usuario extends Persona{
 
 
     @Override
-    public int getDNI() {
-        return super.getDNI();
+    public int getDni() {
+        return super.getDni();
     }
 
     @Override
@@ -43,8 +43,8 @@ public class Usuario extends Persona{
     }
 
     @Override
-    public void setDNI(int DNI) {
-        super.setDNI(DNI);
+    public void setDni(int dni) {
+        super.setDni(dni);
     }
 
     @Override

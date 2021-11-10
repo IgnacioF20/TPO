@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Persona {
 
-    protected int DNI;
+    protected int dni;
     protected String email;
     protected String nombre;
     protected String domicilio;
     protected Date fechaDeNacimiento;
 
-    public int getDNI() {
-        return DNI;
+    public int getDni() {
+        return dni;
     }
 
     public String getEmail() {
@@ -30,8 +30,8 @@ public class Persona {
         return fechaDeNacimiento;
     }
 
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public void setEmail(String email) {
@@ -50,8 +50,8 @@ public class Persona {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public Persona(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
-        this.DNI = DNI;
+    public Persona(int dni, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
+        this.dni = dni;
         this.email = email;
         this.nombre = nombre;
         this.domicilio = domicilio;

@@ -1,14 +1,44 @@
 package com.company.models;
 
+import com.company.dto.SucursalDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Sucursal {
-    private int numero;
-    private String dirección;
-    private Usuario responsableTecnico;
-    private List<Peticion> peticiones = new ArrayList<>();
 
+    List<Peticion> peticiones;
+    int numero;
+    String dirección;
+    Usuario responsableTecnico;
+
+    //  CONSTRUCTOR from dto
+    public Sucursal(SucursalDTO dto) {
+
+        peticiones = new ArrayList<>();
+
+        this.numero = dto.getNumero();
+        this.dirección = dto.getDirección();
+        this.responsableTecnico = dto.getResponsableTecnico();
+    }
+
+    //  FUNCTIONS
+    public boolean esResponsable(int dni) {
+        return dni == responsableTecnico.dni;
+    }
+
+
+    public void enlazarPeticion(Peticion peticion) {
+        peticiones.add(peticion);
+    }
+
+
+    public SucursalDTO toDTO(){
+        SucursalDTO dto = new SucursalDTO(this);
+        return dto;
+    }
+
+    //  GETTER AND SETTER
     public int getNumero() {
         return numero;
     }
@@ -32,24 +62,4 @@ public class Sucursal {
     public void setResponsableTecnico(Usuario responsableTecnico) {
         this.responsableTecnico = responsableTecnico;
     }
-
-    public Sucursal(int numero, String dirección, Usuario responsableTecnico) {
-        this.numero = numero;
-        this.dirección = dirección;
-        this.responsableTecnico = responsableTecnico;
-    }
-    public boolean esResponsable(int DNI){
-        return DNI == responsableTecnico.DNI;
-    }
-//    public void listarPeticionesCriticas(){
-//        for (int x=0;x<peticiones.size();x++)
-//            System.out.println(peticiones[x]);
-//
-//    }
-
-    public void enlazarPeticion(Peticion peticion){
-        peticiones.add(peticion);
-    }
-
-
 }
