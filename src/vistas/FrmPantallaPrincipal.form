@@ -21,12 +21,12 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="eb77d" class="javax.swing.JButton" binding="button1" default-binding="true">
+              <component id="eb77d" class="javax.swing.JButton" binding="administrarUsuariosButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Administrar Usuarios"/>
                 </properties>
               </component>
               <component id="e72ee" class="javax.swing.JLabel">
@@ -37,12 +37,12 @@
                   <text value="Usuarios"/>
                 </properties>
               </component>
-              <component id="39bc7" class="javax.swing.JButton" binding="button2" default-binding="true">
+              <component id="39bc7" class="javax.swing.JButton" binding="administrarSucursalesButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Administrar Sucursales"/>
                 </properties>
               </component>
             </children>
@@ -55,12 +55,12 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="97b7f" class="javax.swing.JButton" binding="button3" default-binding="true">
+              <component id="97b7f" class="javax.swing.JButton" binding="administrarPacientesButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Administrar Pacientes"/>
                 </properties>
               </component>
               <component id="a258c" class="javax.swing.JLabel">
@@ -71,12 +71,12 @@
                   <text value="Pacientes"/>
                 </properties>
               </component>
-              <component id="5750c" class="javax.swing.JButton" binding="button4" default-binding="true">
+              <component id="5750c" class="javax.swing.JButton" binding="consultarPeticionesButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Consultar Peticiones"/>
                 </properties>
               </component>
             </children>
@@ -89,12 +89,12 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="40b79" class="javax.swing.JButton" binding="button5" default-binding="true">
+              <component id="40b79" class="javax.swing.JButton" binding="administrarPeticionesButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Administrar Peticiones"/>
                 </properties>
               </component>
               <component id="7543f" class="javax.swing.JLabel">
@@ -105,12 +105,12 @@
                   <text value="Peticiones"/>
                 </properties>
               </component>
-              <component id="10846" class="javax.swing.JButton" binding="button6" default-binding="true">
+              <component id="10846" class="javax.swing.JButton" binding="consultarPeticionesButton1" default-binding="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Consultar Peticiones"/>
                 </properties>
               </component>
             </children>
@@ -123,20 +123,20 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="e6ea3" class="javax.swing.JButton" binding="button7" default-binding="true">
+              <component id="e6ea3" class="javax.swing.JButton" binding="aministrarPracticasButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Aministrar Practicas"/>
                 </properties>
               </component>
-              <component id="378a6" class="javax.swing.JButton" binding="button8" default-binding="true">
+              <component id="378a6" class="javax.swing.JButton" binding="cargarResultadosButton" default-binding="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Button"/>
+                  <text value="Cargar Resultados"/>
                 </properties>
               </component>
               <component id="f432d" class="javax.swing.JButton" binding="button9" default-binding="true">
