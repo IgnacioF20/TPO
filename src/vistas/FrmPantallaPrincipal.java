@@ -30,6 +30,7 @@ public class FrmPantallaPrincipal extends JDialog {
     public FrmPantallaPrincipal(Window owner, String titulo){
         super(owner,"Pantalla Principal");
 
+
         this.setContentPane(JPanel);
         this.setSize(400,400);
         this.setModal(true); //no permite volver a la pantalla anterior hasta cerrar la actual
