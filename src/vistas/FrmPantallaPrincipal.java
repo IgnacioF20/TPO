@@ -22,7 +22,7 @@ public class FrmPantallaPrincipal extends JDialog {
     private JButton aministrarPracticasButton;
     private JButton cargarResultadosButton;
     private JButton button9;
-    private JButton button10;
+    private JButton resultadosCriticosButton;
     private JButton btnSalir;
 
 
@@ -32,7 +32,7 @@ public class FrmPantallaPrincipal extends JDialog {
 
         this.setContentPane(JPanel);
         this.setSize(400,400);
-        this.setModal(true); //no permite volver a la pantalla anterior hasta cerrar la actual
+        //this.setModal(true); //no permite volver a la pantalla anterior hasta cerrar la actual
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //establezco comportamiento al cerrarse
         this.setLocationRelativeTo(null); //que la pantalla inicie centrada
         this.asociarEventos();
@@ -42,6 +42,33 @@ public class FrmPantallaPrincipal extends JDialog {
     }
     private void asociarEventos()
     {
+        resultadosCriticosButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FrmResultadosCriticos frame = new FrmResultadosCriticos("Resultados Criticos");
+                frame.setVisible(true);
+            }
+        });
+        administrarSucursalesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FrmSucursales frame = new FrmSucursales("Sucursales");
+                frame.setVisible(true);
+
+            }
+        });
+        administrarPacientesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FrmPacientes frame = new FrmPacientes("Pacientes");
+                frame.setVisible(true);
+
+            }
+        });
+        administrarUsuariosButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FrmUsuarios frame = new FrmUsuarios("Usuarios");
+                frame.setVisible(true);
+
+            }
+        });
 
     }
 

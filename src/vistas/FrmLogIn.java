@@ -31,7 +31,6 @@ public class FrmLogIn extends JFrame {
             e.printStackTrace();
         }
 
-
         this.setContentPane(JPanel);
         this.setSize(400,400);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //establezco comportamiento al cerrarse
@@ -39,14 +38,13 @@ public class FrmLogIn extends JFrame {
         this.asociarEventos();
         this.setResizable(false);
 
-
-
-
         iniciarSesiónButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String DNI = txtDNI.getText();
+                String password = jpassPassword.getText();
 
-                if (txtDNI.getText().equals("admin") && clavedef.equals("12345")){
+                if (DNI.equals("1") && password.equals("12")){
                     FrmLogIn.super.dispose();
                     JOptionPane.showMessageDialog(null, "Bienvenido\n Has ingresado "
                                     + "satisfactoriamente al sistema", "Mensaje de bienvenida",

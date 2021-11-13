@@ -2,18 +2,22 @@ package vistas;
 
 import javax.swing.*;
 
-public class FrmSucursales extends JFrame {
-    private JTabbedPane pnlPrincipal;
-    private JPanel panel1;
-    private JTextField textField1;
-    private JButton buscarButton;
-    private JButton guardarButton1;
-    private JButton eliminarButton;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
+public class FrmPacientes extends JFrame {
 
-    public FrmSucursales(String titulo){
+    private JPanel pnlPrincipal;
+    private JTextField txtDNI;
+    private JButton buscarButton;
+    private JButton guardarButton;
+    private JButton eliminarButton;
+    private JButton administrarPeticionesButton;
+    private JTextField txtNombre;
+    private JTextField txtDomicilio;
+    private JTextField txtMail;
+    private JTextField txtSexo;
+    private JTextField txtEdad;
+    private JTextField textField1;
+
+    public FrmPacientes(String titulo){
         super(titulo);
 
         this.setContentPane(pnlPrincipal);
@@ -28,5 +32,6 @@ public class FrmSucursales extends JFrame {
     {
 
     }
+
 
 }
