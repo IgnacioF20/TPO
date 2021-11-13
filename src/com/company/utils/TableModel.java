@@ -1,13 +1,11 @@
 package com.company.utils;
 
-import com.company.models.Paciente;
-import com.company.models.Usuario;
-
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TableModel extends AbstractTableModel {
+
     private List<TestPaciente> lista = new ArrayList<TestPaciente>();
 
 

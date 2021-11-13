@@ -15,7 +15,7 @@ public class Paciente extends Persona {
     SexoEnumerate sexo;
     int edad;
 
-    public Paciente(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
+    public Paciente(String DNI, String email, String nombre, String domicilio, String fechaDeNacimiento, SexoEnumerate sexo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.sexo = sexo;
@@ -51,7 +51,7 @@ public class Paciente extends Persona {
     }
 
     @Override
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return super.getFechaDeNacimiento();
     }
 
@@ -76,13 +76,13 @@ public class Paciente extends Persona {
     }
 
     @Override
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
 
         super.setFechaDeNacimiento(fechaDeNacimiento);
         setEdad(fechaDeNacimiento);
     }
 
-    public Paciente(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
+    public Paciente(String DNI, String email, String nombre, String domicilio, String fechaDeNacimiento) {
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
     }
 
@@ -97,25 +97,25 @@ public class Paciente extends Persona {
     public int getEdad() {
         return edad;
     }
-    public void setEdad(Date fechaNacimientoIngresada) {
+    public void setEdad(String fechaNacimientoIngresada) {
         this.edad = calcularEdad(fechaNacimientoIngresada);
     }
 
-    public int calcularEdad(Date fechaNacimientoIngresada) {
+    public int calcularEdad(String fechaNacimientoIngresada) {
 
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//
+//        String pattern = "MM/dd/yyyy HH:mm:ss";
+//        DateFormat df = new SimpleDateFormat(pattern);
+//
+//        LocalDate fechaNacimiento = LocalDate.parse(df.format(fechaNacimientoIngresada), fmt);
+//        LocalDate fechaHoy = LocalDate.now();
+//
+//        Period periodoNacimientoAHoy = Period.between(fechaNacimiento, fechaHoy);
+//        System.out.printf("Tu edad es: %s años, %s meses y %s días",
+//                periodoNacimientoAHoy.getYears(), periodoNacimientoAHoy.getMonths(), periodoNacimientoAHoy.getDays());
 
-        String pattern = "MM/dd/yyyy HH:mm:ss";
-        DateFormat df = new SimpleDateFormat(pattern);
-
-        LocalDate fechaNacimiento = LocalDate.parse(df.format(fechaNacimientoIngresada), fmt);
-        LocalDate fechaHoy = LocalDate.now();
-
-        Period periodoNacimientoAHoy = Period.between(fechaNacimiento, fechaHoy);
-        System.out.printf("Tu edad es: %s años, %s meses y %s días",
-                periodoNacimientoAHoy.getYears(), periodoNacimientoAHoy.getMonths(), periodoNacimientoAHoy.getDays());
-
-        return this.edad;
+        return 0;
     }
 
     public void altaPeticion(Peticion peticion){

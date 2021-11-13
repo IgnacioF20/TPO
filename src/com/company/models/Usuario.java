@@ -9,7 +9,7 @@ public class Usuario extends Persona{
     private String password;
     private CargoEnumerate cargo;
 
-    public Usuario(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
+    public Usuario(String DNI, String email, String nombre, String domicilio, String fechaDeNacimiento, String password, CargoEnumerate cargo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.password = password;
@@ -38,7 +38,7 @@ public class Usuario extends Persona{
     }
 
     @Override
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return super.getFechaDeNacimiento();
     }
 
@@ -63,7 +63,7 @@ public class Usuario extends Persona{
     }
 
     @Override
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         super.setFechaDeNacimiento(fechaDeNacimiento);
     }
 

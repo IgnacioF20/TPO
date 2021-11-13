@@ -25,6 +25,7 @@ public class FrmResultadosCriticos extends JDialog {
 
 
         tablaPaciente.setModel(miModelo);
+
         miModelo.add("10101010", "Análisis", "300");
         miModelo.add("13123123", "Ecografía", "300");
         miModelo.add("10111010", "Ecografía", "300");

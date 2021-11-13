@@ -1,22 +1,19 @@
 package vistas;
 
-import com.company.controllers.LaboratorioController;
-import com.company.controllers.PacienteController;
-import com.company.controllers.PracticaController;
 import com.company.controllers.UsuarioController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+
 
 public class FrmLogIn extends JFrame {
+
     private JPanel JPanel;
     private JTextField txtDNI;
     private JButton iniciarSesiónButton;
     private JPasswordField jpassPassword;
-    private  FrmPantallaPrincipal self;
+    private FrmPantallaPrincipal self;
 
 
     public FrmLogIn (String titulo){
@@ -46,36 +43,24 @@ public class FrmLogIn extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String DNI, password;
+                String dni, contrasenia;
 
-                DNI = txtDNI.getText();
-                password = jpassPassword.getText();
+                dni = txtDNI.getText();
+                contrasenia = jpassPassword.getText();
 
+                dni = "0";
+                contrasenia = "admin";
 
-                System.out.println("DNI Type"+DNI.getClass());
-                System.out.println("Password Type"+password.getClass());
-                System.out.println("DNI: "+DNI+" | Password: "+password);
-
-
-                boolean usuarioValidado = UsuarioController.getInstance().validarCredenciales(DNI  ,password);
-
-                String mensaje;
-                String titulo;
+                boolean usuarioValidado = UsuarioController.getInstance().validarCredenciales(dni, contrasenia);
 
                 if (usuarioValidado){
-                    mensaje = "Bienvenido\n Has ingresado satisfactoriamente al sistema";
-                    titulo = "Mensaje de bienvenida";
-                }
-                else{
-                    mensaje = "Acceso denegado:\nPor favor ingrese un usuario y/o contraseña correctos";
-                    titulo = "Acceso denegado";
-                }
-
-                JOptionPane.showMessageDialog(null, mensaje, titulo,JOptionPane.INFORMATION_MESSAGE);
-
-                if(usuarioValidado){
                     FrmLaboratorioPrincipal frame = new FrmLaboratorioPrincipal(self,"Pantalla Principal");
                     frame.setVisible(true);
+                }
+                else{
+                    String mensaje = "Acceso denegado:\nPor favor ingrese un usuario y/o contraseña correctos";
+                    String titulo = "Acceso denegado";
+                    JOptionPane.showMessageDialog(null, mensaje, titulo,JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });

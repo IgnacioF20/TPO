@@ -42,6 +42,8 @@ public class FrmLaboratorioPrincipal extends JDialog{
         usuariosButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
+                FrmUsuariosLista frame = new FrmUsuariosLista(self,"Usuarios");
+                frame.setVisible(true);
             }
         });
 

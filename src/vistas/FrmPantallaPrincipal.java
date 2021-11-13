@@ -66,7 +66,7 @@ public class FrmPantallaPrincipal extends JDialog {
         });
         administrarUsuariosButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmUsuarios frame = new FrmUsuarios(self,"Usuarios");
+                FrmUsuarioCrear frame = new FrmUsuarioCrear(self,"Usuarios");
                 frame.setVisible(true);
 
             }

@@ -8,7 +8,7 @@ public class Persona {
     protected String email;
     protected String nombre;
     protected String domicilio;
-    protected Date fechaDeNacimiento;
+    protected String fechaDeNacimiento;
 
     public String getDni() {
         return dni;
@@ -26,7 +26,7 @@ public class Persona {
         return domicilio;
     }
 
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
@@ -46,11 +46,11 @@ public class Persona {
         this.domicilio = domicilio;
     }
 
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public Persona(String dni, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
+    public Persona(String dni, String email, String nombre, String domicilio, String fechaDeNacimiento) {
         this.dni = dni;
         this.email = email;
         this.nombre = nombre;

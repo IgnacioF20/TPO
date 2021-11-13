@@ -12,7 +12,7 @@ public class PacienteDTO {
     private String email;
     private String nombre;
     private String domicilio;
-    private Date fechaDeNacimiento;
+    private String fechaDeNacimiento;
     private SexoEnumerate sexo;
     private int edad;
 
@@ -48,11 +48,11 @@ public class PacienteDTO {
         this.domicilio = domicilio;
     }
 
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
@@ -72,7 +72,7 @@ public class PacienteDTO {
         this.edad = edad;
     }
 
-    public PacienteDTO(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
+    public PacienteDTO(String DNI, String email, String nombre, String domicilio, String fechaDeNacimiento, SexoEnumerate sexo) {
         this.DNI = DNI;
         this.email = email;
         this.nombre = nombre;

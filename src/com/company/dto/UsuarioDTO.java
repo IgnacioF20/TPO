@@ -10,11 +10,11 @@ public class UsuarioDTO {
     private String email;
     private String nombre;
     private String domicilio;
-    private Date fechaDeNacimiento;
+    private String fechaDeNacimiento;
     private String password;
     private CargoEnumerate cargo;
 
-    public UsuarioDTO(String DNI, String password, String email, String nombre, String domicilio, Date fechaDeNacimiento, CargoEnumerate cargo) {
+    public UsuarioDTO(String DNI, String password, String email, String nombre, String domicilio, String fechaDeNacimiento, CargoEnumerate cargo) {
         this.DNI = DNI;
         this.email = email;
         this.nombre = nombre;
@@ -56,11 +56,11 @@ public class UsuarioDTO {
         this.domicilio = domicilio;
     }
 
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
