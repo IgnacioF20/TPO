@@ -22,7 +22,7 @@ public class Sucursal {
     }
 
     //  FUNCTIONS
-    public boolean esResponsable(int dni) {
+    public boolean esResponsable(String dni) {
         return dni == responsableTecnico.dni;
     }
 

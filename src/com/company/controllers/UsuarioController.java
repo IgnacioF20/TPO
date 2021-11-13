@@ -28,7 +28,7 @@ public class UsuarioController {
         else
             return false;
     }
-    private Usuario obtenerUsuarioPorDNI(int DNI){
+    private Usuario obtenerUsuarioPorDNI(String DNI){
         Usuario usuarioBuscado = null;
         for(Usuario usuario : usuarios){
             if(usuario.getDni() == DNI){
@@ -38,7 +38,7 @@ public class UsuarioController {
         }
         return usuarioBuscado;
     }
-    public boolean validarCredenciales(int DNI, String password){
+    public boolean validarCredenciales(String DNI, String password){
         Usuario usuarioBuscado = obtenerUsuarioPorDNI(DNI);
         if (usuarioBuscado != null &&  usuarioBuscado.getPassword() == password)
             return true;

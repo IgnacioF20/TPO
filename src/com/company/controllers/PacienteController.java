@@ -46,7 +46,7 @@ public class PacienteController {
         else
             return false;
     }
-    public boolean bajaPaciente(int dni){
+    public boolean bajaPaciente(String dni){
         Paciente paciente = obtenerPacientePorDNI(dni);
         if(!paciente.tienePeticionCompleta()){
             this.pacientes.remove(paciente);
@@ -65,7 +65,7 @@ public class PacienteController {
             return false;
     }
 
-    public boolean modificarPeticion(int dni, String idPeticion, PeticionDTO dto){
+    public boolean modificarPeticion(String dni, String idPeticion, PeticionDTO dto){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
         Peticion peticion = null;
         if(pacienteAUtilizar != null){
@@ -80,7 +80,7 @@ public class PacienteController {
         return (peticion != null);
     }
 
-    public Peticion consultarPeticion(int dni, PeticionDTO peticion){
+    public Peticion consultarPeticion(String dni, PeticionDTO peticion){
         Paciente pacienteAUtilizar = obtenerPacientePorDNI(dni);
         Peticion peticionACargar = null;
         if(pacienteAUtilizar != null){
@@ -90,7 +90,7 @@ public class PacienteController {
         return peticionACargar;
     }
 
-    private Paciente obtenerPacientePorDNI(int dni){
+    private Paciente obtenerPacientePorDNI(String dni){
         Paciente pacienteBuscado = null;
         for(Paciente paciente : pacientes){
             if(paciente.getDni() == dni){

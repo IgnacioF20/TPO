@@ -15,7 +15,7 @@ public class Paciente extends Persona {
     SexoEnumerate sexo;
     int edad;
 
-    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
+    public Paciente(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.sexo = sexo;
@@ -31,7 +31,7 @@ public class Paciente extends Persona {
     */
 
     @Override
-    public int getDni() {
+    public String getDni() {
         return super.getDni();
     }
 
@@ -56,7 +56,7 @@ public class Paciente extends Persona {
     }
 
     @Override
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         super.setDni(dni);
     }
 
@@ -82,7 +82,7 @@ public class Paciente extends Persona {
         setEdad(fechaDeNacimiento);
     }
 
-    public Paciente(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
+    public Paciente(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento) {
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
     }
 

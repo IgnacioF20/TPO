@@ -9,7 +9,7 @@ public class Usuario extends Persona{
     private String password;
     private CargoEnumerate cargo;
 
-    public Usuario(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
+    public Usuario(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
 
         super(DNI, email, nombre, domicilio, fechaDeNacimiento);
         this.password = password;
@@ -18,7 +18,7 @@ public class Usuario extends Persona{
 
 
     @Override
-    public int getDni() {
+    public String getDni() {
         return super.getDni();
     }
 
@@ -43,7 +43,7 @@ public class Usuario extends Persona{
     }
 
     @Override
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         super.setDni(dni);
     }
 

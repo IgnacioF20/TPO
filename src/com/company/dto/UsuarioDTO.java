@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class UsuarioDTO {
 
-    private int DNI;
+    private String DNI;
     private String email;
     private String nombre;
     private String domicilio;
@@ -14,7 +14,7 @@ public class UsuarioDTO {
     private String password;
     private CargoEnumerate cargo;
 
-    public UsuarioDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, String password, CargoEnumerate cargo) {
+    public UsuarioDTO(String DNI, String password, String email, String nombre, String domicilio, Date fechaDeNacimiento, CargoEnumerate cargo) {
         this.DNI = DNI;
         this.email = email;
         this.nombre = nombre;
@@ -24,11 +24,11 @@ public class UsuarioDTO {
         this.cargo = cargo;
     }
 
-    public int getDNI() {
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(int DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 

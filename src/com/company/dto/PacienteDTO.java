@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class PacienteDTO {
 
-    private int DNI;
+    private String DNI;
     private String email;
     private String nombre;
     private String domicilio;
@@ -16,11 +16,11 @@ public class PacienteDTO {
     private SexoEnumerate sexo;
     private int edad;
 
-    public int getDNI() {
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(int DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
@@ -72,7 +72,7 @@ public class PacienteDTO {
         this.edad = edad;
     }
 
-    public PacienteDTO(int DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
+    public PacienteDTO(String DNI, String email, String nombre, String domicilio, Date fechaDeNacimiento, SexoEnumerate sexo) {
         this.DNI = DNI;
         this.email = email;
         this.nombre = nombre;
