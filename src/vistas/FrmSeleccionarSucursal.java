@@ -2,13 +2,16 @@ package vistas;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class FrmSeleccionarSucursal extends JDialog {
 
     private JPanel pnlPrincipal;
     private JButton button1;
-    private JList list1;
+    private JTextField textField1;
     private JButton crearButton;
+    private JList list1;
 
     public FrmSeleccionarSucursal(Window owner, String titulo){
         super(owner,"Seleccione sucursal");
@@ -21,6 +24,11 @@ public class FrmSeleccionarSucursal extends JDialog {
         this.setResizable(false);
 
 
-
+        list1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+            }
+        });
     }
 }

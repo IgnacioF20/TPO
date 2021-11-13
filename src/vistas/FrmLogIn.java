@@ -47,7 +47,7 @@ public class FrmLogIn extends JFrame {
                     JOptionPane.showMessageDialog(null, "Bienvenido\n Has ingresado "
                                     + "satisfactoriamente al sistema", "Mensaje de bienvenida",
                             JOptionPane.INFORMATION_MESSAGE);
-                    FrmPantallaPrincipal frame = new FrmPantallaPrincipal(self,"Pantalla Principal");
+                    FrmLaboratorioPrincipal frame = new FrmLaboratorioPrincipal(self,"Pantalla Principal");
                     frame.setVisible(true);
 
                 }
