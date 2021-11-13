@@ -12,8 +12,8 @@ public class FrmLogIn extends JFrame {
     private JButton iniciarSesiónButton;
     private JPasswordField jpassPassword;
     private  FrmPantallaPrincipal self;
-    char clave[]=jpassPassword.getPassword();
-    String clavedef=new String(clave);
+
+
 
     public FrmLogIn (String titulo){
 
@@ -41,10 +41,9 @@ public class FrmLogIn extends JFrame {
         iniciarSesiónButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String DNI = txtDNI.getText();
-                String password = jpassPassword.getText();
 
-                if (DNI.equals("1") && password.equals("12")){
+                String password = new String(jpassPassword.getPassword());
+                if (txtDNI.getText().equals("1") && password.equals("12")){
                     FrmLogIn.super.dispose();
                     JOptionPane.showMessageDialog(null, "Bienvenido\n Has ingresado "
                                     + "satisfactoriamente al sistema", "Mensaje de bienvenida",

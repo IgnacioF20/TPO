@@ -1,8 +1,11 @@
 package vistas;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class FrmPacientes extends JFrame {
+public class FrmPacientes extends JDialog {
 
     private JPanel pnlPrincipal;
     private JTextField txtDNI;
@@ -16,9 +19,10 @@ public class FrmPacientes extends JFrame {
     private JTextField txtSexo;
     private JTextField txtEdad;
     private JTextField textField1;
+    private  FrmPacientes self;
 
-    public FrmPacientes(String titulo){
-        super(titulo);
+    public FrmPacientes(Window owner, String titulo){
+        super(owner,"Pacientes");
 
         this.setContentPane(pnlPrincipal);
         this.setSize(400,400);
@@ -26,7 +30,15 @@ public class FrmPacientes extends JFrame {
         this.setLocationRelativeTo(null); //que la pantalla inicie centrada
         this.asociarEventos();
         this.setResizable(false);
+        this.setModal(true);
 
+        administrarPeticionesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmAdministrarPeticiones frame = new FrmAdministrarPeticiones(self,"Administrar Peticiones");
+                frame.setVisible(true);
+            }
+        });
     }
     private void asociarEventos()
     {

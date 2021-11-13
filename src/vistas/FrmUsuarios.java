@@ -3,8 +3,9 @@ package vistas;
 import com.company.controllers.UsuarioController;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class FrmUsuarios extends JFrame{
+public class FrmUsuarios extends JDialog{
 
     private JTabbedPane tabbedPane1;
     private JPanel pnlPrincipal;
@@ -27,8 +28,8 @@ public class FrmUsuarios extends JFrame{
     private JComboBox comboBox1;
     private JComboBox comboBox2;
 
-    public FrmUsuarios(String titulo){
-        super(titulo);
+    public FrmUsuarios(Window owner, String titulo){
+        super(owner,"Usuarios");
 
         this.setContentPane(pnlPrincipal);
         this.setSize(400,400);
@@ -36,6 +37,7 @@ public class FrmUsuarios extends JFrame{
         this.setLocationRelativeTo(null); //que la pantalla inicie centrada
         //this.asociarEventos();
         this.setResizable(false);
+        this.setModal(true);
 
     }
 

@@ -24,7 +24,7 @@ public class FrmPantallaPrincipal extends JDialog {
     private JButton button9;
     private JButton resultadosCriticosButton;
     private JButton btnSalir;
-
+    private  FrmPantallaPrincipal self;
 
 
     public FrmPantallaPrincipal(Window owner, String titulo){
@@ -32,7 +32,7 @@ public class FrmPantallaPrincipal extends JDialog {
 
         this.setContentPane(JPanel);
         this.setSize(400,400);
-        //this.setModal(true); //no permite volver a la pantalla anterior hasta cerrar la actual
+        this.setModal(true); //no permite volver a la pantalla anterior hasta cerrar la actual
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //establezco comportamiento al cerrarse
         this.setLocationRelativeTo(null); //que la pantalla inicie centrada
         this.asociarEventos();
@@ -44,27 +44,27 @@ public class FrmPantallaPrincipal extends JDialog {
     {
         resultadosCriticosButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmResultadosCriticos frame = new FrmResultadosCriticos("Resultados Criticos");
+                FrmResultadosCriticos frame = new FrmResultadosCriticos(self,"Resultados Criticos");
                 frame.setVisible(true);
             }
         });
         administrarSucursalesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmSucursales frame = new FrmSucursales("Sucursales");
+                FrmSucursales frame = new FrmSucursales(self,"Sucursales");
                 frame.setVisible(true);
 
             }
         });
         administrarPacientesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmPacientes frame = new FrmPacientes("Pacientes");
+                FrmPacientes frame = new FrmPacientes(self,"Pacientes");
                 frame.setVisible(true);
 
             }
         });
         administrarUsuariosButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmUsuarios frame = new FrmUsuarios("Usuarios");
+                FrmUsuarios frame = new FrmUsuarios(self,"Usuarios");
                 frame.setVisible(true);
 
             }
