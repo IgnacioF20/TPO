@@ -39,6 +39,7 @@ public class FrmPantallaPrincipal extends JDialog {
         this.setResizable(false);
 
 
+
     }
     private void asociarEventos()
     {
@@ -67,6 +68,13 @@ public class FrmPantallaPrincipal extends JDialog {
                 FrmUsuarios frame = new FrmUsuarios(self,"Usuarios");
                 frame.setVisible(true);
 
+            }
+        });
+        administrarPeticionesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmAdministrarPeticiones frame = new FrmAdministrarPeticiones(self,"Usuarios");
+                frame.setVisible(true);
             }
         });
 

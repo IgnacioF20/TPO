@@ -41,7 +41,6 @@ public class FrmLogIn extends JFrame {
         iniciarSesiónButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 String password = new String(jpassPassword.getPassword());
                 if (txtDNI.getText().equals("1") && password.equals("12")){
                     FrmLogIn.super.dispose();
@@ -65,9 +64,6 @@ public class FrmLogIn extends JFrame {
 
 
     }
-
-
-
 
     private void asociarEventos()
     {
