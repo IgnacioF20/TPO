@@ -50,6 +50,18 @@ public class FrmUsuarioCrear extends JDialog{
         this.setResizable(false);
 
 
+        JTF_dni.setBackground(Color.getHSBColor(0,17,100));
+        JTF_contrasenia.getText();
+        JTF_nombre.getText();
+        JTF_email.getText();
+        JTF_domicilio.getText();
+        JTF_nacimiento.getText();
+        JCBx_cargo.getSelectedItem();
+
+
+        guardarButton1.setEnabled(false);
+
+
         guardarButton1.addActionListener(new ActionListener() {
 
             @Override
@@ -60,6 +72,8 @@ public class FrmUsuarioCrear extends JDialog{
                 String dni, contrasenia, nombre, email, domicilio, fechaDeNacimiento;
                 CargoEnumerate cargo;
 
+                campos = [dni,]
+
                 dni = JTF_dni.getText();
                 contrasenia = JTF_contrasenia.getText();
                 nombre = JTF_nombre.getText();
@@ -67,6 +81,8 @@ public class FrmUsuarioCrear extends JDialog{
                 domicilio= JTF_domicilio.getText();
                 fechaDeNacimiento = JTF_nacimiento.getText();
                 cargo = usuarioController.textoACargo(JCBx_cargo.getSelectedItem().toString());
+
+
 
                 UsuarioDTO usuarioDTO = new UsuarioDTO(
                         dni,
@@ -78,6 +94,15 @@ public class FrmUsuarioCrear extends JDialog{
                         cargo);
 
                 usuarioController.altaUsuario(usuarioDTO);
+            }
+        });
+
+
+        JTF_nacimiento.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
             }
         });
     }
