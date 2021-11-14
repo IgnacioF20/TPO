@@ -52,7 +52,7 @@ public class FrmPantallaPrincipal extends JDialog {
         });
         administrarSucursalesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmSucursales frame = new FrmSucursales(self,"Sucursales");
+                FrmSucursalCrear frame = new FrmSucursalCrear(self,"Sucursales");
                 frame.setVisible(true);
 
             }

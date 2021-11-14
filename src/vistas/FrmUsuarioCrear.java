@@ -37,6 +37,7 @@ public class FrmUsuarioCrear extends JDialog{
 
     private JPanel JPFooter;
     private JButton guardarButton1;
+    private JPanel JPTitle;
 
     public FrmUsuarioCrear(Window owner, String titulo){
 
@@ -59,12 +60,7 @@ public class FrmUsuarioCrear extends JDialog{
         JCBx_cargo.getSelectedItem();
 
 
-        guardarButton1.setEnabled(false);
-
-
         guardarButton1.addActionListener(new ActionListener() {
-
-            @Override
             public void actionPerformed(ActionEvent e) {
 
                 UsuarioController usuarioController = UsuarioController.getInstance();
@@ -72,7 +68,7 @@ public class FrmUsuarioCrear extends JDialog{
                 String dni, contrasenia, nombre, email, domicilio, fechaDeNacimiento;
                 CargoEnumerate cargo;
 
-                campos = [dni,]
+                //campos = [dni,]
 
                 dni = JTF_dni.getText();
                 contrasenia = JTF_contrasenia.getText();
@@ -81,8 +77,6 @@ public class FrmUsuarioCrear extends JDialog{
                 domicilio= JTF_domicilio.getText();
                 fechaDeNacimiento = JTF_nacimiento.getText();
                 cargo = usuarioController.textoACargo(JCBx_cargo.getSelectedItem().toString());
-
-
 
                 UsuarioDTO usuarioDTO = new UsuarioDTO(
                         dni,

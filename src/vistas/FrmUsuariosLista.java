@@ -25,7 +25,6 @@ public class FrmUsuariosLista extends JDialog{
     private JTable tablaUsuarios;
     private JPanel JPNew;
     private JButton btnCrearUsuario;
-
     private FrmUsuariosLista self;
 
     private TableUsuarios modeloTablaUsuarios = new TableUsuarios();

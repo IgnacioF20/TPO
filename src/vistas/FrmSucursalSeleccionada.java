@@ -2,7 +2,7 @@ package vistas;
 
 import javax.swing.*;
 
-public class FrmSucursalSeleccionada extends JFrame {
+public class FrmSucursalSeleccionada extends JDialog {
 
 
     private JPanel PnlPrincipal;

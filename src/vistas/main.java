@@ -4,6 +4,7 @@ import com.company.controllers.LaboratorioController;
 import com.company.controllers.PacienteController;
 import com.company.controllers.PracticaController;
 import com.company.controllers.UsuarioController;
+import com.company.dto.SucursalDTO;
 import com.company.dto.UsuarioDTO;
 import com.company.enumerate.CargoEnumerate;
 
@@ -39,6 +40,14 @@ public class main{
                 CargoEnumerate.ADMINISTRADOR);
 
         controllers.usuarioController.altaUsuario(usuarioDTO);
+
+        SucursalDTO sucursalDTO = new SucursalDTO(
+                "0001",
+                "Lima",
+                "Roberto");
+
+        controllers.laboratorioController.altaSucursal(sucursalDTO);
+
 
         FrmLogIn frame = new FrmLogIn("Sistema de Laboratorio");
         frame.setVisible(true);

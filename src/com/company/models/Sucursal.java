@@ -7,9 +7,9 @@ import java.util.List;
 public class Sucursal {
 
     List<Peticion> peticiones;
-    int numero;
+    String numero;
     String dirección;
-    Usuario responsableTecnico;
+    String responsableTecnico;
 
     //  CONSTRUCTOR from dto
     public Sucursal(SucursalDTO dto) {
@@ -22,10 +22,7 @@ public class Sucursal {
     }
 
     //  FUNCTIONS
-    public boolean esResponsable(String dni) {
-        return dni == responsableTecnico.dni;
-    }
-
+    //public boolean esResponsable(String dni) {return dni == responsableTecnico.dni;}
 
     public void enlazarPeticion(Peticion peticion) {
         peticiones.add(peticion);
@@ -61,7 +58,7 @@ public class Sucursal {
     }
 
     //  GETTER AND SETTER
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -69,11 +66,11 @@ public class Sucursal {
         return dirección;
     }
 
-    public Usuario getResponsableTecnico() {
+    public String getResponsableTecnico() {
         return responsableTecnico;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -81,7 +78,7 @@ public class Sucursal {
         this.dirección = dirección;
     }
 
-    public void setResponsableTecnico(Usuario responsableTecnico) {
+    public void setResponsableTecnico(String responsableTecnico) {
         this.responsableTecnico = responsableTecnico;
     }
 

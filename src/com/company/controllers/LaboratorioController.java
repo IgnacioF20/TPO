@@ -2,6 +2,8 @@ package com.company.controllers;
 
 import com.company.dto.SucursalDTO;
 import com.company.models.Sucursal;
+import com.company.models.Usuario;
+
 import java.util.ArrayList;
 
 public class LaboratorioController {
@@ -67,7 +69,7 @@ public class LaboratorioController {
     }
 
 
-    public boolean tienePeticionesActivas(int numeroSucursal){
+    public boolean tienePeticionesActivas(String numeroSucursal){
 
         Sucursal sucursal = getSucursal(numeroSucursal);
 
@@ -79,7 +81,7 @@ public class LaboratorioController {
     }
 
 
-    public boolean derivarPeticionesActivas(int numeroSucursalOrigen, int numeroSucursalDestino){
+    public boolean derivarPeticionesActivas(String numeroSucursalOrigen, String numeroSucursalDestino){
 
         Sucursal sucursalOrigen = getSucursal(numeroSucursalOrigen);
         Sucursal sucursalDestino = null;
@@ -94,8 +96,12 @@ public class LaboratorioController {
         return (sucursalDestino!= null);
     }
 
+    public ArrayList<Sucursal> getSucursales(){
+        return this.sucursales;
+    }
+
     //  GETTER AND SETTER
-    private Sucursal getSucursal(int nroSucursal){
+    private Sucursal getSucursal(String nroSucursal){
 
         Sucursal sucursalBuscada = null;
         for(Sucursal sucursal : sucursales ){

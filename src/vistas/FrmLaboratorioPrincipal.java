@@ -25,11 +25,12 @@ public class FrmLaboratorioPrincipal extends JDialog{
         this.asociarEventos();
         this.setResizable(false);
 
+
     }
     private void asociarEventos(){
         sucursalesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                FrmSeleccionarSucursal frame = new FrmSeleccionarSucursal(self,"Sucursales");
+                FrmSucursalLista frame = new FrmSucursalLista(self,"Sucursales");
                 frame.setVisible(true);
 
             }
@@ -46,6 +47,7 @@ public class FrmLaboratorioPrincipal extends JDialog{
                 frame.setVisible(true);
             }
         });
+
 
     }
 

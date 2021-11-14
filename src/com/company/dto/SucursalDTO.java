@@ -5,12 +5,12 @@ import com.company.models.Usuario;
 
 public class SucursalDTO {
 
-    private int numero;
+    private String numero;
     private String dirección;
-    private Usuario responsableTecnico;
+    private String responsableTecnico;
 
     //  CONSTRUCTOR from args
-    public SucursalDTO(int numero, String dirección, Usuario responsableTecnico) {
+    public SucursalDTO(String numero, String dirección, String responsableTecnico) {
         this.numero = numero;
         this.dirección = dirección;
         this.responsableTecnico = responsableTecnico;
@@ -26,7 +26,7 @@ public class SucursalDTO {
 
     //  GETTER AND SETTER
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -34,7 +34,7 @@ public class SucursalDTO {
         return dirección;
     }
 
-    public Usuario getResponsableTecnico() {
+    public String getResponsableTecnico() {
         return responsableTecnico;
     }
 }
